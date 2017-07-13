@@ -1,0 +1,106 @@
+h2.title {
+	text-align: center;
+	margin: 2rem auto;
+	letter-spacing: .32rem;
+}
+
+.ur_video_box.lists_box {
+	padding: 0 2rem;
+	font-size: .8rem;
+	margin: 2rem 0 4rem 0;
+}
+
+.lists_title {
+	height: 2rem;
+	line-height: 2rem;
+}
+.lists li {
+	display: inline-block;
+	letter-spacing: .1rem;
+	margin-right: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+.lists a:hover,
+.lists a.active {
+	color: #93732b;
+}
+
+@media only screen and (max-width: 1024px) {
+	.lists li {
+		display: inline-block;
+		letter-spacing: .1rem;
+	}
+	.lists li {
+		margin-left: 1.5rem;
+	}
+}
+
+@media only screen and (max-width: 980px) {
+	.lists li {
+		display: inline-block;
+		letter-spacing: 0;
+	}
+	.lists li {
+		margin-left: 1.25rem;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.footer {
+		margin-top: 3rem;
+	}
+	.ur_video_box .lists_title {
+		width: auto;
+	}
+	h2.title {
+		position: absolute;
+		left: 50%;
+		top: 4.8rem;
+		transform: translateX(-50%);
+		-ms-transform: translateX(-50%); 	
+		-moz-transform: translateX(-50%); 	
+		-webkit-transform: translateX(-50%); 
+		-o-transform: translateX(-50%);
+		z-index: -1;
+	}
+	.video_box {
+		margin-left: -2%;
+		margin-right: -2%;
+	}
+	.ur_video_box.lists_box {
+		text-align: center;
+		width: 70%;
+		margin: 2rem auto 4rem auto;
+	}
+	.lists li {
+		width: 100%;
+		margin: 1rem 0 0 0;
+		text-align: center;
+		display: block;
+	}
+	.year {
+		text-align: center;
+		display: block;
+	}
+	a:active {
+		color: #93732b;
+	}
+
+	.video_list {
+		height: 13rem;
+		overflow: hidden;
+	}
+	.load_tip {
+		text-align: center;
+		margin-top: 1rem;
+	}
+	.load_tip span{
+		display: inline-block;
+		height: .7rem;
+		width: .7rem;
+		background: url('images/load_more.png') center no-repeat;
+		background-size: 100% auto;
+	}
+}
+

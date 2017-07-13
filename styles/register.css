@@ -1,0 +1,201 @@
+.register_hover {
+	position: fixed;
+	background: rgba(0, 0, 0, .6);
+	width: 100%;
+	height: 100%;
+	z-index: 1001;
+	left: 0;
+	top: 0;
+	display: none;
+}
+
+.register_hover .register_window {
+	width: 41rem;
+	position: absolute;
+	left: 50%;
+	top: 9rem;
+	transform: translateX(-50%);
+    -ms-transform: translateX(-50%);    
+    -moz-transform: translateX(-50%);   
+    -webkit-transform: translateX(-50%); 
+    -o-transform: translateX(-50%);
+	background: #fff;
+}
+
+.register_hover h2.title {
+	color: #93732b;
+	margin: 0;
+	text-align: left;
+	font-size: 1.3rem;
+	margin-top: .6rem;
+	display: inline-block;
+	padding-left: 2rem;
+}
+
+.register_hover .table {
+	margin: 1rem auto;
+	font-size: .8rem;
+	overflow: hidden;
+	position: relative;
+}
+
+.register_hover .td {
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 1rem;
+	box-sizing: border-box;
+	float: left;
+	padding: 0 2rem;
+}
+
+.input_box {
+	border-right: 1px solid #93732b;
+}
+.register_hover .send.disable {
+	background: #aaa;
+}
+
+.register_hover .closed_btn {
+	position: absolute;
+	width: .8rem;
+	height: .8rem;
+	right: 1rem;
+	top: 1rem;
+	background: url('images/hide_left_nav.png') center no-repeat;
+	background-size: 100% auto;
+	cursor: pointer;
+}
+
+.user_name,
+.password,
+.confirm_password,
+.confirm_password_identify,
+.phone_number {
+	border-bottom: 1px solid #93732b;
+	height: 3rem;
+	line-height: 3rem;
+	width: 24rem;
+}
+
+.confirm_password_identify {
+	border: none;
+	position: relative;
+}
+
+.user_name input,
+.password input,
+.confirm_password input,
+.confirm_password_identify input,
+.phone_number input {
+	border: none;
+	outline: none;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: .8rem;
+	vertical-align: bottom;
+}
+.confirm_password_identify input {
+	border-bottom: 1px solid #93732b;
+	width: 65%;
+}
+.user_name input,
+.password input,
+.confirm_password input {
+	width: 100%;
+}
+.phone_number {
+	position: relative;
+}
+.phone_number_box {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.register_hover .send, .register_hover .register {
+	outline: none;
+	border: none;
+	background: #93732b;
+	color: #fff;
+	position: absolute;
+	right: 0;
+	bottom: 3px;
+	padding: .5rem 0;
+	text-align: center;
+	min-width: 5.5rem;
+}
+
+.register_hover .send.disabled {
+	background: #959595;
+}
+.register_hover .register {
+	bottom: 0;
+}
+.register_hover .register_handle_box {
+	position: relative;
+	margin: 1rem 0;
+}
+
+.register_hover .register_status_box {
+	display: inline-block;
+}
+
+.register_status {
+	display: block;
+}
+.forget_pwd {
+	display: block;
+	text-align: right;
+	background: url('images/questionmark.png') right center no-repeat;
+	background-size: .8rem auto;
+	padding-right: 1rem;
+	padding-left: 0;
+}
+
+.register_hover .other_register_box {
+	text-align: center;
+	position: relative;
+}
+.qq_icon,
+.zhifubao_icon,
+.wechat_icon {
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	background: url('images/qq_icon.png') center no-repeat;
+	background-size: 100% auto;
+}
+
+.zhifubao_icon {
+	background-image: url('images/zhifubao_icon.png');
+	margin: 0 1rem;
+}
+
+.wechat_icon {
+	background-image: url('images/wechat_icon.png');
+}
+
+.other_register_box h3.title {
+	margin: 1.6rem auto 2.5rem auto;
+	font-size: 1rem;
+}
+.register_tip {
+	display: block;
+	text-align: right;
+	margin-right: -.5rem;
+	color: #ccc;
+	margin-top: 1rem;
+}
+.register_tip a {
+	color: #ccc;
+	text-decoration: underline;
+}
+.login_link_box {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 28rem;
+	text-align: center;
+}
+.login_link {
+	text-decoration: underline;
+}

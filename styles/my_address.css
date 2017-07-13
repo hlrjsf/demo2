@@ -1,0 +1,412 @@
+button,label{cursor:pointer;}
+input,textarea{
+	font-size:.9rem;
+}
+a:hover{
+	color:#93732b;
+}
+.media_show{
+	display:none;
+	}
+.content{
+	font-size:.8rem;
+	padding:0px 2rem;
+}
+.address_cont{
+	margin-bottom:1.5rem;
+}
+.address_box{
+	float:left;
+	width:85%;
+	position:relative;
+}
+.address_tit{
+	font-size:.9rem;
+}
+.add_address{
+	width:100%;
+	border:1px solid #93732b;
+	padding:1rem;
+	-moz-box-sizing: border-box;  
+	 -webkit-box-sizing: border-box; 
+	 -o-box-sizing: border-box; 
+	 -ms-box-sizing: border-box; 
+	 box-sizing: border-box;
+	 display: none;
+}
+
+.add_address_btn{
+	width:100%;
+	background:#93732b;
+	text-align:center;
+	padding:.7rem 0px;
+	margin-top:1rem;
+}
+.add_address_btn span{
+	display:inline-block;
+	padding-left:1.5rem;
+	color:#fff;
+	background:url(images/add_new_address.png) no-repeat left center;
+	background-size:auto 90%;
+}
+.add_address form{
+	padding:1rem 0px;
+}
+.add_address .tit{
+	font-size:.7rem;
+	width:6rem;
+	text-align:right;
+}
+
+.new_infs_list ul li{
+	display: inline-block;
+	padding: .3rem 0;
+	line-height: 1.5rem;
+}
+.new_infs_list ul li:first-child{
+	width: 6rem;
+	text-align: right;
+	margin-right: .5rem;
+}
+.new_infs_list input {
+    padding-left: 5px;
+    line-height: 1.5rem;
+    border: 1px solid #94742b;
+    -moz-box-sizing: border-box;  
+	 -webkit-box-sizing: border-box; 
+	 -o-box-sizing: border-box; 
+	 -ms-box-sizing: border-box; 
+	 box-sizing: border-box;
+}
+.normal_input {
+    width: 316px;
+}
+.area_code, .tel_extension {
+    width: 62px;
+}
+.tel_code {
+    width: 170px;
+}
+.shop_address_box {
+    display: inline-block;
+    position: relative;
+    border: 1px solid #94742b;
+    text-align: left;
+    line-height: 1.5rem;
+    padding: 0 .4rem;
+    margin-right: 1em;
+    width:8em;
+    cursor: pointer;
+    background: url('images/light_arrow_down.png') 96% center no-repeat;
+    background-size: .6rem auto;
+    vertical-align: middle;
+    -moz-box-sizing: border-box;  
+	 -webkit-box-sizing: border-box; 
+	 -o-box-sizing: border-box; 
+	 -ms-box-sizing: border-box; 
+	 box-sizing: border-box;
+}
+.list_out_box {
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    width: 100%; 
+    background: #fff;
+    overflow: hidden;
+    border: 1px solid #94742b;
+    display: none;
+}
+.country_list{
+	z-index:4;
+}
+.province_list{
+	z-index:3;
+}
+.city_list{
+	z-index:2;
+}
+.area_list{
+	z-index:1;
+}
+.list_out_box ul {
+    width: 100%;
+    height: 7rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0 9px;
+}
+.new_infs_list .list_out_box ul li {
+    text-align: left;
+    width: 100%;
+    line-height: 1.5rem;
+    display: block;
+}
+.list_out_box ul li a {
+    display: block;
+}
+.address_detail{
+	vertical-align: top;
+}
+.add_new_list textarea {
+    min-height: 100px;
+    padding: .5rem 2%;
+    border: 1px solid #94742b;
+    resize: none;
+    outline: none;
+    -moz-box-sizing: border-box;  
+	 -webkit-box-sizing: border-box; 
+	 -o-box-sizing: border-box; 
+	 -ms-box-sizing: border-box; 
+	 box-sizing: border-box;
+}
+.detailed_addrs {
+    width: 32.5em;
+}
+.add_new_sure label input{
+	display:none;
+}
+.sure_add_btn{
+	padding:.3rem 2rem;
+	border:none;
+	background:#94742b;
+	color:#fff;
+	font-size:.7rem;
+	margin:0px 2rem;
+}
+.radio_btn {
+	display:inline-block;
+    width: 12px;
+    height: 12px;
+    left:0px;
+    top:.22rem;
+    position:absolute;
+    background: url(images/radio_no.png) center center no-repeat;
+    background-size: 100% auto;
+    cursor: pointer;
+}
+.radio_btn.active{
+    background: url(images/radio_yes.png) center center no-repeat;
+    background-size: 100% auto;
+}
+
+.address_list .tit{
+	margin-bottom:.5rem;
+	padding-left:.5rem;
+	font-size:.7rem;
+}
+.address_table{
+	width:100%;
+	text-align: center;
+}
+.address_table dt{
+	width:100%;
+	padding:.2rem 0px;
+	background:#94742b;
+	color:#fff;
+	overflow:hidden;
+}
+.address_table dt>div{
+	float:left;
+	-moz-box-sizing: border-box;  
+	 -webkit-box-sizing: border-box; 
+	 -o-box-sizing: border-box; 
+	 -ms-box-sizing: border-box; 
+	 box-sizing: border-box;
+}
+.address_table dd{
+	width:100%;
+	display:table;
+	padding:1rem 0px;
+	position:relative;
+	border-bottom:1px solid #94742b;
+	-moz-box-sizing: border-box;  
+	 -webkit-box-sizing: border-box; 
+	 -o-box-sizing: border-box; 
+	 -ms-box-sizing: border-box; 
+	 box-sizing: border-box;
+}
+.address_table dd>div{
+	display:table-cell;
+	vertical-align: middle;
+	-moz-box-sizing: border-box;  
+	 -webkit-box-sizing: border-box; 
+	 -o-box-sizing: border-box; 
+	 -ms-box-sizing: border-box; 
+	 box-sizing: border-box;
+}
+.name_th,.name_td{
+	width:10%;
+}
+.address_th,.address_td{
+	width:40%;
+}
+.phone_th,.phone_td{
+	width:20%;
+}
+/*.phone_td>div{
+	padding:.2rem 0px;
+}*/
+.operate_th{
+	padding-left:2rem;
+
+}
+.operate_td>div{
+	display:inline-block;
+	cursor:pointer;
+}
+.operate_th,.operate_td{
+	width:30%;
+}
+.operate_td .default_btn{
+	margin-left:18%;
+	display: inline-block;
+}
+.default_btn.selected{
+	color:#94742b;
+	display:inline-block;
+}
+.content label{
+	position:relative;
+	padding-left:1.2rem;
+}
+.default_btn .radio_btn{
+	display:none; 
+}
+.default_btn input{
+	display:none;
+}
+.choose_preferent{
+	display:none;
+    cursor: pointer;
+    width: 1.2rem;
+    height: 1rem;
+    position:absolute;
+    left:0px;
+    top:.1rem;
+    background: url(../styles/images/choose_no.png) left center no-repeat;
+    background-size: auto 100%;
+}
+.choose_preferent.active{
+    background: url(../styles/images/choose_yes.png) left center no-repeat;
+    background-size: auto 100%;
+}
+
+.add_new_address_btn {
+	padding: .3rem 2rem;
+    border: none;
+    background: #94742b;
+    color: #fff;
+    font-size: .7rem;
+    margin: 0px 2rem;
+    cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+	.media_hidden{
+		display:none;
+	}
+	.media_show{
+		display:inline-block;
+	}
+	.content{
+		padding:0px;
+	}
+	.left_menu_list_box{
+		display:none;
+	}
+	.address_box{
+		width:100%;
+		padding-bottom:0rem;
+	}
+	.address_cont{
+		margin-bottom:.7rem;
+	}
+	.add_address{
+		display: block;
+		border:none;
+		padding:0px;
+	}
+	.new_infs_list ul li {
+	    display: block;
+	    text-align: left !important;
+	}
+	.new_infs_list input {
+		width:100%;
+		line-height:2rem;
+		height:2rem;
+	}
+	.shop_address_box{
+		margin-bottom:1rem;
+		display:block;
+    	width:100%;
+    	line-height:2rem;
+		height:2rem;
+	}
+	.detailed_addrs{
+		width:100%;
+	}
+	.mobile_phone .area_code, .mobile_phone .tel_extension {
+	    width: 20%;
+	}
+	.mobile_phone .tel_code {
+	    width: 54%;
+	    margin: 0 3%;
+	}
+	.mobile_phone input{
+		float:left;
+	}
+	.add_new_sure {
+		width:100%;
+		margin-top:1rem;
+	}
+	.sure_add_btn{
+		width:100%;
+		margin:0px;
+		padding:.8rem 0px;
+		font-size:.8rem;
+	}
+
+	.address_table{
+		border-top:1px solid #94742b;
+	}
+	.address_table dd {
+		padding:1rem;
+		text-align:left;
+	}
+	.address_table dd>div{
+		display:block;
+		width:auto;
+	}
+	.address_td{
+		padding-top:.5rem;
+		padding-bottom:.8rem;
+	}
+	.phone_td{
+		position:absolute;
+		top:1rem;
+		left:7em;
+	}
+	.phone_td>div{
+		padding:0px;
+	}
+	.operate_td{
+		float:right;
+	}
+	.revise_btn{
+		margin:0px 1rem;
+	}
+	.operate_td .default_btn{
+		float:left;
+		margin:0px;
+		margin-right:.5rem;
+		display:inline-block !important;
+	}
+	.default_btn .radio_btn{
+		display:inline-block; 
+	}
+	/*设置板块*/
+	.add_address{
+		position:absolute;
+		bottom:0px;
+		left:0px;
+	}
+}

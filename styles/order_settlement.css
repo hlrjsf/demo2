@@ -1,0 +1,834 @@
+button{cursor:pointer;}
+.content{
+	width: 94%;
+	margin: 0 auto;
+	font-size: .9rem;
+}
+.pc_hide {
+	display: none;
+}
+.con_title{
+	text-align: center;
+	margin-top: 2rem;
+}
+.choose_shipping_address{
+	margin: 3rem 0 2rem 0;
+}
+.addrs_infs{
+	cursor:pointer;
+}
+.addrs_cont {
+	margin-bottom: 1rem;
+}
+.addrs_cont div, .radio_btn{
+	display: inline-block;
+	margin-right: .5rem;
+}
+span.radio_btn{
+	margin-right: 0;
+}
+.radio_btn{
+	width: 12px;
+	height: 12px;
+	margin-top: .5rem; 
+	background: url(images/radio_no.png) center center no-repeat;
+	background-size: 100% auto;
+	cursor: pointer;
+}
+.radio_btn.active{
+	width: .8rem;
+	height: .8rem; 
+	background: url(images/radio_yes.png) center center no-repeat;
+	background-size: 100% auto;
+}
+.addrs_btn{
+	cursor:pointer;
+}
+.add_new_addrs{
+	padding-bottom:.5rem;
+	cursor: pointer;
+}
+div.alter_addrs{
+	margin-left: 1rem;
+}
+div.default_addrs{
+	display: none;
+	margin-left: 1rem;
+}
+div.default_addrs.on{
+	display: inline-block;
+}
+.invoice_box {
+	margin-top: 50px;
+}
+.invoice_box ul, .invoice_box ul li{
+	display: inline-block;
+	margin-right: 1rem;
+	cursor:pointer;
+}
+.more_address a {
+	display: inline-block;
+	color: #94742b;
+}
+.arr_icon {
+	display: inline-block;
+	width: .8rem;
+	height: .8rem;
+	background: url('images/light_arrow_down.png') center no-repeat;
+	background-size: 100% auto;
+}
+.other_address_box {
+	display: none;
+}
+
+.invoice_box ul li:first-child{
+	margin-right: 4rem;
+}
+.alter_addrs, .delt_addrs, .default_addrs{
+	color: #94742b;
+	cursor: pointer;
+}
+.invoice{
+	margin: 1rem 0;
+}
+span.radio_btn {
+	margin-right: .5rem;
+}
+.text_box {
+	display: inline-block;
+	min-width: 8rem;
+}
+div.title {
+	margin-bottom: 2rem;
+}
+.change_invoice {
+	color: #888;
+	margin-left: 1rem;
+}
+.invoice_option_box {
+	display: inline-block;
+}
+.more_invoice_box {
+	display: none;
+}
+.invoice_item {
+	margin: 1rem 0 1rem 1rem;
+}
+.invoice_title input{
+	min-width: 233px;
+	text-align: center;
+	border: 0;
+	border-bottom: 1px solid #94742b;
+	margin-left: .5rem;
+}
+.goods_infs{
+	margin-top: 2rem;
+}
+.infs_box{
+	padding: 1rem 0;
+	overflow: hidden;
+}
+.one{
+	border-bottom: 1px solid #94742b;
+}
+.infs_box div{
+	float: left;
+	text-align: center;
+}
+.left_box{
+	width: 40%;
+}
+.right_box{
+	width: 15%;
+}
+div.nums{
+	display: table-cell;
+}
+.pic_box{
+	width: 25%;
+}
+.pic_box img{
+	width: 100%;
+}
+.pic_box, .p_infs_box, .sales_num div{
+	display: inline-block;
+
+}
+.sales_num .salse_input_box,
+.sales_num .btn_box {
+	vertical-align: bottom;
+}
+.p_infs_box{
+	width: 70%;
+	margin: 2rem 0;
+	padding-left: 5%;
+}
+.p_infs_box div{
+	width: 100%;
+	text-align: left;
+}
+.goods_id{
+	margin: .5rem 0 1rem 0;
+}
+.color_and_size span{
+	margin-right: 2rem;
+}
+.last_main{
+	overflow: hidden;
+}
+.left_box_cont{
+	float: left;
+}
+.sales_num, .promotions, .order_note{
+	padding: 1rem 0;
+}
+.sales_num input{
+	line-height: 1.5rem;
+	text-align: center;
+	border: 0;
+	border-bottom: 1px solid #94742b;
+}
+.sales_num button{
+	border: 0;
+	padding: .5rem 1rem;
+	background: #94742b;
+	color: #fff;
+}
+div.sales_sure_box{
+	display: none;
+	width: 100%;
+	margin: 1.6rem 0 0 5.3rem;
+}
+
+.promotions span{
+	display:inline-block;
+	margin-right:1.4rem;
+}
+.choose_preferent{
+	cursor:pointer;
+	padding-left:1.2rem;
+	height:1rem;
+	line-height:1rem;
+	margin-right:.2rem;
+	 background: url(../styles/images/choose_no.png) left center no-repeat;
+    background-size:auto .8rem;
+}
+.choose_preferent.selected{
+	 background: url(../styles/images/choose_yes.png) left center no-repeat;
+    background-size:auto .8rem;
+}
+.order_note span{
+	display: block;
+}
+.order_note textarea{
+	width: 20rem;
+	height: 5rem;
+	margin-left: 5rem;
+	margin-top: -1rem;
+	border: 1px solid #94742b;
+	resize: none;
+}
+.right_box_cont{
+	float: right;
+	margin-top: 4rem;
+}
+.all_price {
+	overflow: hidden;
+}
+.all_price div{
+	float: left;
+	margin-right: 1rem;
+	text-align: right;
+	line-height: 1.5rem;
+}
+div.right_cont{
+	margin-right: 0;
+}
+.center_cont ul li:last-child, .right_cont ul li:last-child{
+	font-size: 1.2rem;
+	padding: .5rem 0;
+}
+.center_cont ul li span {
+	width: 5rem;
+	margin-right: 2rem;
+	display: inline-block;
+	text-align: right;
+	float: left;
+}
+.sure_pay{
+	float: right;
+	margin: 1rem 0;
+}
+.sure_pay button{
+	padding: .5rem 2rem;
+	border: 0;
+	font-size: 1rem;
+	color: #fff;
+	background: #94742b;
+}
+.add_new_list{
+	display: none;
+}
+.new_infs_list ul li{
+	display: inline-block;
+	padding: .3rem 0;
+	line-height: 1.5rem;
+}
+.new_infs_list ul li:first-child{
+	width: 6rem;
+	text-align: right;
+	margin-right: .5rem;
+}
+.asterisk_icon:after{
+	position: absolute;
+	content: '';
+	width: 5px;
+	height: 4px;
+	margin-top: .2rem;
+	background: url(../styles/images/asterisk_icon.png) center center no-repeat;
+	background-size: 100% auto;
+}
+.area_input {
+	display: inline-block;
+	padding-left: 5px;
+    line-height: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    border: 1px solid #94742b;
+    width: 10rem;
+}
+.new_infs_list input{
+	padding-left: 5px;
+	line-height: 1.5rem;
+	border: 1px solid #94742b;
+}
+.normal_input{
+	width: 316px;
+}
+.area_code, .tel_extension{
+	width: 62px;
+}
+.tel_code{
+	width: 170px;
+}
+.detailed_addrs{
+	width: 530px;
+}
+.add_new_sure button{
+	margin: 2rem 1rem 0 7rem;
+    padding: .3rem 1rem;
+	border: 0;
+	font-size: .9rem;
+	color: #fff;
+	background: #94742b;
+
+}
+.shop_address_box {
+	display: inline-block;
+	position: relative;
+	border: 1px solid #94742b;
+	text-align: left;
+	line-height: 1.5rem;
+	padding: 0 .4rem;
+	min-width: 6rem;
+	margin-right: .5rem;
+	cursor: pointer;
+	background: url('images/light_arrow_down.png') 96% center no-repeat;
+	background-size: .6rem auto;
+}
+.list_out_box {
+	position: absolute;
+	top: 100%;
+	left: -1px;
+	width: 100%;
+	background: #fff;
+	overflow: hidden;
+	border: 1px solid #94742b;
+	display: none;
+}
+
+.list_out_box ul {
+	width: 100%;
+	height: 7rem;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding: 0 9px;
+}
+.new_infs_list .list_out_box ul li {
+	text-align: left;
+	width: 100%;
+	line-height: 1.5rem;
+	display: block;
+}
+.list_out_box ul li a {
+	display: block;
+}
+.gray {
+	color: #ababab;
+}
+/*----------------------------------------------------------------------------------------*/
+.setFont_C{
+	color: #959595;
+}
+.edit_address {
+	display: none; 
+}
+.address_box {
+	display: inline-block;
+}
+.mobile_box {
+	display: none;
+}
+
+.add_new_list textarea {
+    min-height: 100px;
+    padding: .5rem 2%;
+    border: 1px solid #94742b;
+    resize: none;
+    outline: none;
+}
+div.goods_info_title {
+	margin-bottom: 1rem;
+}
+
+.address_detail {
+	float: left;
+}
+.cpnform_invoice {
+	display: inline-block;
+	padding: .32rem 2rem;
+    border: 0;
+    font-size: 1rem;
+    color: #fff;
+    background: #94742b;
+}
+.cancel_invoice {
+	display: inline-block;
+	padding: .32rem 2rem;
+    border: 0;
+    font-size: 1rem;
+    color: #fff;
+    background: #ccc;
+    margin-left: 1rem;
+}
+.invoice_btn_box {
+	float: right;
+}
+.addr_user_name {
+	margin-right: 1rem;
+}
+
+.more_invoice_inlineblock_box {
+	display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+	.sales_num .mobile_block {
+		display: block;
+	}
+	.all_price {
+		overflow: visible;
+	}
+	.invoice_btn_box {
+		float: none;
+	}
+	div.alter_addrs {
+		margin-left: 3.85rem;
+	}
+	.con_title {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);    
+	    -moz-transform: translateX(-50%);   
+	    -webkit-transform: translateX(-50%); 
+	    -o-transform: translateX(-50%);
+	    top: 4.8rem;
+	    z-index: -1;
+
+	}
+	.content {
+		width: 100%;
+	}
+	.mobile_box {
+		display: block;
+		border-bottom: 1px solid #94742b;
+		padding: 2rem 0;
+	}
+	.choose_shipping_address {
+		border-bottom: 1px solid #94742b;
+		margin-bottom: 0;
+		padding-bottom: 2rem;
+	}
+	.edit_address,
+	.edit_invoice_btn {
+		display: inline-block;
+		float: right;
+	}
+
+	.edit_address:after,
+	.edit_invoice_btn:after {
+		content: '';
+		display: inline-block;
+		width: .6rem;
+		height: .6rem;
+		background: url('./images/light_arrow_right.png') center no-repeat;
+		background-size: auto 100%;
+	}
+	.addrs_list {
+		border-top: 1px solid #94742b;
+		padding-top: 1rem;
+	}
+	.address_hover {
+		overflow: auto;
+		position: fixed;
+		height: 100%;
+		top: 0;
+		background: #fff;
+		width: 96%;
+		z-index: 100000;
+		padding: 3rem 0 1rem 0;
+		
+		display: none;
+		box-sizing: border-box;
+	}
+	
+	.phone_num {
+		position: absolute;
+		top: .32rem;
+		right: 0;
+	}
+	.addrs_cont {
+		position: relative;
+		padding-bottom: 4rem;
+		border-bottom: 1px solid #94742b;
+	}
+
+	.addrs_cont .address_box {
+		margin-top: .5rem;
+		display: block;
+	}
+	.addrs_cont .t_phone_num {
+		display: none;
+	}
+
+	.default_addrs  {
+		position: absolute;
+		bottom: 1rem;
+		left: 10%;
+	}
+	.alter_addrs  {
+		position: absolute;
+		bottom: 1rem;
+		left: 30%;
+	}
+	.delt_addrs {
+		position: absolute;
+		bottom: 1rem;
+		right: 1rem;
+	}
+	div.default_addrs {
+		display: block;
+	}
+	.add_new_addrs {
+		background: #94742b;
+		color: #fff;
+		text-align: center;
+		display: block;
+		height: 2rem;
+		line-height: 2rem;
+		padding-bottom: 0;
+	}
+	.add_new_addrs:before {
+		content: '+';
+		display: inline-block;
+		font-size: 1.1rem;
+	}
+
+	.add_new_addrs .radio_btn {
+		display: none;
+	}
+
+	.add_new_sure .radio_btn {
+		position: static;
+	}
+
+	.new_infs_list input {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.new_infs_list ul li {
+		display: block;
+		text-align: left !important;
+	}
+
+	.detailed_addrs {
+		width: 100%;
+	}
+
+	.add_new_list {
+		box-sizing: border-box;
+		width: 99%;
+	}
+	.mobile_phone input {
+		display: inline-block;
+		float: left;
+	}
+
+	.mobile_phone .area_code,
+	.mobile_phone .tel_extension {
+		width: 20%;
+	}
+	.mobile_phone .tel_code {
+		width: 54%;
+		margin: 0 3%;
+	}
+	.shop_address_box {
+		width: 100%;
+		box-sizing: border-box;
+		margin-bottom: 1rem;
+	}
+	.list_out_box {
+		background: #fff;
+		z-index: 2;
+	}
+
+	.invoice_box {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background: #fff;
+		z-index: 100000;
+		top: 0;
+		left: 0;
+		box-sizing: border-box;
+		padding: 2rem .5rem;
+		display: none;
+	}
+
+	.invoice_box .radio_btn {
+		position: static;
+
+	}
+
+	.invoice_box li {
+		display: inline-block;
+		width: 100%;
+		margin-bottom: 1rem;
+	}
+
+	.invoice_box li input {
+		width: 76%;
+		min-width: 0;
+		float: right;
+	}
+
+	.invoice_title {
+		margin-left: 0;
+	}
+	.closed_hover_btn {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+		width: 1rem;
+		height: 1rem;
+		background: url('./images/share_del.png') center no-repeat;
+		background-size: 100% auto;
+	}
+	.goods_infs .infs_box .goods_num {
+		float: right;
+		text-align: right;
+	}
+	.mobile_hide {
+		display: none !important;
+	}
+	.color_and_size {
+	    margin: 10px 0 25px 0;
+	    font-size: .7rem;
+	    color: #959595;
+	}
+	.pc_hide {
+		display: inline;
+	}
+
+	.left_box_cont {
+		width: 100%;
+	}
+
+	.sales_num {
+		overflow: hidden;
+	}
+
+	.sales_num .title {
+		display: block;
+		margin-bottom: 1rem;
+		margin-top: 1.5rem;
+	}
+
+	.sales_num .salse_input_box {
+		width: 80%;
+		vertical-align: middle;
+	}
+
+	.sales_num input {
+		border: 1px solid #93732b;
+		width: 100%;
+		height: 3rem;
+		line-height: 3rem;
+		box-sizing: border-box;
+		text-align: left;
+		padding-left: .5rem;
+	}
+	.sales_num .btn_box {
+		width: 20%;
+		vertical-align: middle;
+	}
+	.btn_box button {
+		height: 3rem;
+		line-height: 3rem;
+		padding: 0 1rem;
+		outline: none;
+		display: block;
+		width: 100%;
+	}
+
+	.promotions .title {
+		display: block;
+		margin-bottom: 1rem;
+		margin-top: 1rem;
+	}
+	.promotions {
+		padding-top: 0;
+	}
+	.promotions .p_active {
+		padding: 0 2rem 0 1.5rem;
+	}
+
+	.order_note textarea {
+		width: 100%;
+		margin: 0;
+		box-sizing: border-box;
+		min-height: 100px;
+		padding: .5rem 2%;
+	}
+
+	.order_note span {
+		margin-bottom: 1rem;
+	}
+
+	.all_price div {
+		display: block;
+		float: none;
+		text-align: center;
+	}
+
+	.right_box_cont {
+		width: 100%;
+		float: none;
+	}
+
+	.all_price div {
+		margin-right: 0;
+	}
+	.center_cont ul li {
+		margin-bottom: 1rem;
+	}
+	.center_cont ul li span {
+		display: block;
+		float: none;
+		text-align: center;
+		margin-right: 0;
+		width: 100%;
+	}
+
+	.center_cont ul li:last-child {
+		padding-top: 1rem;
+		border-top: 1px solid #94742b;
+		font-size: 1rem;
+	}
+	.sure_pay {
+		float: none;
+		display: block;
+		width: 90%;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.sure_pay button {
+		width: 100%;
+	}
+
+	.invoice_title input {
+		height: 2rem;
+		line-height: 2rem;
+	}
+
+	.cpnform_invoice,
+	.cancel_invoice {
+		display: block;
+		color: #fff;
+		outline: none;
+		border: none;
+		width: 100%;
+		text-align: center;
+		height: 2.6rem;
+		// line-height: 2.6rem;
+		float: none;
+		margin-left: 0;
+		margin-bottom: 1rem;
+	}
+
+	.add_new_list input,
+	.add_new_list .shop_address_box {
+		height: 2rem;
+		line-height: 2rem;
+	}
+
+	.add_new_list textarea {
+	    width: 95%;
+	}
+
+	.add_new_sure span {
+		display: none;
+	}
+
+	.add_new_sure .sure_add_btn {
+		margin: 0;
+		width: 100%;
+		text-align: center;
+		height: 2rem;
+		line-height: 2rem;
+		padding: 0;
+	}
+
+	div.sales_sure_box {
+		margin: .5rem 0;
+	}
+
+	.invoice {
+		display: inline-block;
+	}
+	.promotions .p_active {
+		line-height: 2rem;
+		height: 2rem;
+	}
+	.invoice_box .m_inline_block {
+		width: auto;
+	}
+
+	.ul_right .first_li {
+		margin-left: 5.7em;
+	}
+
+	.invoice_box .ul_right {
+		margin-right: 0;
+	}
+	.invoice_title .text_name {
+		display: inline-block;
+		vertical-align: middle;
+		height: 2rem;
+		line-height: 2rem;
+	}
+	
+}

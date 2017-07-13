@@ -1,0 +1,47 @@
+.content {
+	font-size: .85rem;
+}
+
+.content h2 {
+	font-size: 1.1rem;
+}
+
+.item {
+	text-align: center;
+	width: 40%;
+	margin: 0 auto;
+}
+
+.item + .item {
+	margin-top: 8rem;
+}
+
+.item img {
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+.item p {
+	text-align: left;
+}
+
+.item .author_par {
+	height: 3rem;
+	line-height: 3rem;
+	text-align: center;
+}
+@media only screen and (max-width: 768px){
+	.text_content{
+		margin-bottom: 84px;
+	}
+	.item {
+		width: 55%;
+		margin-top: 1rem;
+	}
+	.item + .item {
+		margin-top: 2rem;
+	}
+	.item img {
+		margin-bottom: .6rem;
+	}
+}

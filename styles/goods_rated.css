@@ -1,0 +1,39 @@
+.content {
+	overflow: visible;
+	margin-top: 3rem;
+}
+.left_main_nav_list .content {
+	margin-top: 0;
+}
+.left_txt, .center_txt, .right_txt {
+	float: none;
+}
+.review_list {
+	border-top: 1px solid #90722c;
+	margin-bottom: -1px;
+}
+.loading_btn {
+	text-align: center;
+	margin-top: 1rem;
+	height: 1rem;
+	
+}
+.load_icon {
+	content: '';
+	width: .8rem;
+	height: .8rem;
+	background: url('images/loader.gif') center no-repeat;
+	background-size: .8rem auto;
+	vertical-align: middle;
+	display: inline-block;
+	visibility: hidden;
+}
+.load_icon.show {
+	visibility: visible;
+}
+.favourite_list {
+	font-size: 0;
+}
+.favourite_list .favourite {
+	margin-right: .5rem;
+}

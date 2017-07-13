@@ -1,0 +1,263 @@
+body{
+	font-size: .8rem;
+}
+h3 {
+	font-size: .9rem;
+	font-weight: bold;
+}
+.content{
+	padding: 0 2rem;
+}
+.right_content>h3 {
+	height: 3rem;
+	line-height: 3rem;
+}
+.all_title{
+	background: #93732b;
+	color: #fff;
+	text-align: center;
+	height: 1.5rem;
+	line-height: 1.5rem;
+}
+.all_title div, .all_title .same_list, .all_title .goods_inf{
+	float: left;
+}
+/*.same_list {
+	width: 15%;
+	text-align: center;
+}
+.right_box {
+	display: inline-block;
+	width: 59%;
+	font-size: 0;
+	vertical-align: middle;
+}*/
+.right_box .same_list {
+	float: left;
+	width: 20%;
+	font-size: .8rem;
+	vertical-align: middle;
+}
+.all_title .right_box .same_list {
+	float: left;
+	width: 20%;
+	font-size: .8rem;
+	vertical-align: middle;
+}
+.p_price_list, .return_style_list, .return_state_list, .oprate_list{
+	padding: 1rem 0;
+}
+.goods_inf{
+	width: 40%;
+	font-size: .8rem;
+	display: inline-block;
+	vertical-align: middle;
+}
+.right_box{
+	width: 59.5%;
+	font-size: .8rem;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+.order_num{
+	border: 1px solid #93732b;
+	border-bottom: 0;
+	margin-top: 1.5rem;
+}
+.list_box:first-child .order_num{
+	margin-top: 1rem;
+}
+.order_num span:first-child{
+	padding: 0 2% 0 1%;
+}
+.return_infs{
+	border: 1px solid #93732b;
+	font-size: 0;
+}
+.p_title{
+	position: relative;
+	margin-bottom: .5rem;
+	color: #fff;
+	background: #93732b;
+	text-align: center;
+}
+.all_title, .return_infs, .left_box{
+	overflow: hidden;
+}
+.left_box div{
+	float: left;
+}
+.pic_box{
+	width: 24%;
+	margin: .5rem 3%;
+}
+.pic_box img{
+	width: 100%;
+}
+.p_infs{
+	width: 60%;
+	padding-top: 1rem;
+}
+.p_nmu, .p_color_size{
+	color: #959595;
+}
+.p_color_size div{
+	display: inline-block;
+	margin-right: 1rem;
+}
+.p_nmu{
+	margin: .5rem 0;
+}
+.p_nmu, .p_color_size, .time_list p{
+	font-size: .7rem;
+}
+.p_nmu span {
+	letter-spacing: 0;
+}
+.check_detail a{
+	border-bottom: 1px solid #ccc;
+}
+.check_detail a.active{
+	color: #93732b;
+}
+.p_return_list div.loading{
+	display: none;
+}
+@media only screen and (max-width: 768px) {
+	.right_content>h3, .all_title, .check_detail, .pages_num{
+		display: none;
+	}
+	.content{
+		padding: 0;
+	}
+	.order_num{
+		border: 0;
+	}
+	.goods_inf {
+		width: 100%;
+	}
+	.return_infs{
+		margin-top: .6rem;
+	}
+	.return_infs:before{
+		content: '';
+		display: block;
+		width: 100%;
+		height: 1rem;
+		background: #93732b;		
+	}
+	.pic_box{
+		width: 20%;
+	}
+	.p_infs{
+		width: 74%;
+	}
+	.p_name, .p_nmu{
+		width: 100%;
+	}
+	.p_infs{
+		padding-top: .5rem;
+	}
+	.same_list {
+		text-align: left;
+	}
+	.right_box{
+		width: 100%;
+		display: block;
+	}
+	.right_box .p_price_list, .right_box .time_list{
+		display: block;
+		width: 74%;
+		margin-left: 26%;
+	}
+	.right_box .return_style_list, .right_box .return_state_list{
+	    display: block;
+	    width: 50%;
+	    font-size: .8rem;
+	    vertical-align: middle;
+	}
+	.return_state_list{
+		text-align: right;
+	}
+	.wait_return{
+		padding-right: 1.5rem;
+	}
+	.return_state_list{
+		width: 20%;
+		float: left;
+	}
+	.return_all, .wait_return, .time p{
+		display: inline-block;
+	}
+	.time_list, .p_price_list, .return_style_list, .return_state_list, .oprate_list{
+		padding: 0;
+	}
+	.return_style_list{
+		width: 80%;
+		float: left;
+	}
+	.return_style_list, .return_state_list {
+		padding: 1rem 0;
+		border-top: 1px solid #93732b;
+	}
+	.return_style_list:before{
+		display: inline-block;
+		content: '退款类型：';
+		margin-left: 10%;
+	}
+	.p_price:before{
+		display: inline-block;
+		content: '退款金额：';
+	}
+	.time:before{
+		display: inline-block;
+		content: '申请时间：';
+		color: #959595;
+	}
+	.time_list, .wait_return{
+		color: #959595;
+	}
+	.p_return_list div.loading {
+	    display: block;
+	    width: 100%;
+	    height: 3.2rem;
+	    background: url('images/loader.gif') center no-repeat;
+	    background-size: auto 1.2rem;
+	    margin-left: 0;
+	}
+	.country_select, .language_select {
+		font-size: .9rem;
+	}
+	
+}
+@media (min-width:769px) and (max-width: 1200px) {
+	.p_infs{
+		padding-top: .5rem;
+	}
+}
+@media (min-width:321px) and (max-width: 767px) {
+	.p_price_list{
+		margin-top: -2rem;
+	}
+}
+@media only screen and (width: 375px) {
+	.p_price_list{
+		margin-top: -.8rem;
+	}
+}
+@media only screen and (width: 768px) {
+	.p_price_list{
+		margin-top: -3rem;
+	}
+}
+@media only screen and (width: 320px) {
+	.p_price_list, .time_list{
+		margin-top: 0;
+	}
+}
+@media only screen and (width: 360px) {
+	.p_price_list{
+		margin-top: -.8rem;
+	}
+}

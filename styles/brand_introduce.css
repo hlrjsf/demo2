@@ -1,0 +1,26 @@
+h2.title {
+	text-align: center;
+	margin: 2rem auto;
+	letter-spacing: .32rem;
+}
+
+.picture_box,
+.brand_info {
+	width: 94%;
+	margin: 0 auto;
+}
+
+.picture_box img {
+	width: 100%;
+}
+
+.par {
+	margin-top: 2rem;
+	font-size: .9rem;
+}
+@media only screen and (max-width: 768px) {
+	.brand_info,
+	.picture_box {
+		width: 100%;
+	}
+}

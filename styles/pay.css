@@ -1,0 +1,209 @@
+.content {
+	font-size: .8rem;
+}
+h2.title {
+	font-size: 1rem;
+}
+.order_box {
+	box-sizing: border-box;
+	background: #f6f6f6;
+	width: 95%;
+	padding: .6rem 2rem;
+	margin: 0 auto;
+}
+.check_order {
+	color: #94742b;
+	margin-left: .6rem;
+}
+.order_info_box {
+	position: relative;
+	vertical-align: bottom;
+	line-height: 2rem;
+}
+.pay_num {
+	font-size: 1.1rem;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.pay_box {
+	width: 95%;
+	margin: 1rem auto;
+	padding: .6rem 2rem;
+}
+.pay_box h3 {
+	padding-left: 2rem;
+}
+.pay_tip {
+	color: #888;
+	font-size: .7rem;
+	margin-top: .6rem;
+	display: block;
+}
+
+.pay_type {
+	padding: 1rem 2rem;
+	border: 1px solid #93732b;
+	border-left: none;
+	border-right: none;
+}
+
+.pay_type .item {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 2rem;
+	cursor: pointer;
+}
+
+.check_box {
+	display: inline-block;
+	vertical-align: middle;
+	width: .8rem;
+	height: .9rem;
+	background: url('images/check_btn.png') center no-repeat;
+	background-size: 100% auto;
+}
+
+.check_box.active {
+	background-image: url('images/check_btn_active.png');
+}
+
+.zhifubao_pay_icon, .wechat_pay_icon, .ur_card_pay_icon {
+	display: inline-block;
+	width: 6rem;
+	height: 3rem;
+	background: url('images/zhifubao_icon.jpg') left center no-repeat;
+	background-size: 100% auto;
+	vertical-align: middle;
+}
+.wechat_pay_icon {
+	background-image: url('images/wechat_icon.jpg');
+}
+.ur_card_pay_icon {
+	background-image: url('images/ur_card.jpg');
+}
+
+.pay_type input {
+	vertical-align: middle;
+	border: 1px solid #93732b;
+	padding: .2rem .5rem;
+	outline: none;
+	width: 7rem;
+	margin-right: .5rem;
+}
+
+.btn {
+	display: inline-block;
+	vertical-align: middle;
+	color: #fff;
+	background: #93732b;
+	padding: .2rem 1rem;
+}
+.pay_btn_box {
+	width: 95%;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: .6rem 2rem;
+	text-align: right;
+}
+.pay_btn {
+	padding: .5rem 1rem;
+}
+.item.ur_card_input_box {
+	display: none;
+}
+
+@media only screen and (max-width: 768px) {
+	.order_box {
+		background: none;
+		text-align: center;
+	}
+	.order_info_box span {
+		display: block;
+	}
+	.pay_num {
+		position: static;
+		margin-top: 1.5rem;
+	}
+	.gray {
+		color: #ccc;
+	}
+	.pay_num {
+		line-height: 1.5rem;
+	}
+	.pay_box {
+		margin: 0 auto;
+		padding: 0;
+		text-align: center;
+	}
+	.pay_box h3 {
+		padding: 0;
+	}
+	.pay_type {
+		border: none;
+		text-align: center;
+		padding: 0;
+	}
+	.hide {
+		display: none;
+	}
+	.pay_type .item {
+		display: block;
+		margin: .7rem auto;
+	}
+
+	.item.ur_card_input_box {
+		border: 1px solid #93732b;
+		padding: 1rem 0;
+		position: relative;
+		margin-top: 10px;
+		display: none;
+	}
+	.ur_card_input_box:before,
+	.ur_card_input_box:after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: -20px;
+		width: 0;
+		height: 0;
+		border: 10px solid #93732b;
+		border-left-color: transparent;
+		border-right-color: transparent;
+		border-top-color: transparent;
+		transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);    
+	    -moz-transform: translateX(-50%);   
+	    -webkit-transform: translateX(-50%); 
+	    -o-transform: translateX(-50%);
+	}
+	.ur_card_input_box:after {
+		border-bottom-color: #fff;
+		top: -19px;
+	}
+	.ur_card_input_box input {
+		display: block;
+		width: 90%;
+		margin: 0 auto 1rem auto;
+		text-align: center;
+		line-height: 1.5rem;
+	}
+	.btn {
+		padding: .7rem 2rem;
+	}
+	.pay_btn_box {
+		width: 95%;
+		padding: .6rem 0;
+		margin-top: 1rem;
+	}
+	.pay_btn {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		text-align: center;
+		float: none;
+	}
+	.pay_tip {
+		text-align: center;
+	}
+}

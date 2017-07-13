@@ -1,0 +1,144 @@
+.out_box {
+	overflow: hidden;
+}
+.content {
+	font-size: .8rem;
+}
+
+.box {
+	display: inline-block;
+	position: relative;
+}
+
+.info_item {
+	position: relative;
+	margin-bottom: 2rem;
+}
+.info_item>span {
+	display: inline-block;
+	width: 20rem;
+}
+
+.info_input {
+	position: absolute;
+	right: 0;
+	background: #fff;
+	width: 20rem;
+	bottom: -.1rem;
+	border-bottom: 1px solid #93732b;
+	height: 1.5rem;
+	display: none;
+}
+
+.confirm_change {
+	background: #93732b;
+	color: #fff;
+	height: 2rem;
+	line-height: 2rem;
+	padding: 0 2rem;
+	visibility: hidden;
+	display: inline-block;
+}
+.confirm_change.show {
+	visibility: visible;
+}
+
+.edit_btn {
+	top: -.4rem;
+	left: 10rem;
+	position: absolute;
+	width: 1.4rem;
+	height: 1.4rem;
+	background: url('images/edit_btn.png') center no-repeat;
+	background-size: 100% auto;
+	z-index: 2;
+}
+.edit_btn span {
+	display: none;
+}
+
+.line {
+	margin-top: 5rem;
+	border-top: 1px solid #93732b;
+}
+.right_content>h2 {
+	height: 4.5rem !important;
+}
+
+@media only screen and (max-width: 768px) {
+	.confirm_change {
+		visibility: visible;
+		display: none;
+	}
+	.confirm_change.show {
+		display: block;
+	}
+	.out_box {
+		padding: 0 2%;
+	}
+	.right_content {
+		margin-top: 1rem;
+	}
+	.right_content>h2{
+		display: none;
+	}
+	.box {
+		display: block;
+	}
+	.line {
+		display: none;
+	}
+
+	.edit_btn {
+		position: static;
+		display: block;
+		width: 100%;
+		background: #93732b;
+		text-align: center;
+		color: #fff;
+		height: 2.6rem;
+		line-height: 2.6rem;
+	}
+	.edit_btn span {
+		display: inline;
+	}
+	.edit_btn:before {
+		content: '';
+		display: inline-block;
+		width: .9rem;
+		height: .9rem;
+		margin-bottom: -2px;
+		background: url('images/edit_btn2.png') center no-repeat;
+		background-size: 100% auto;
+	}
+	.info_item {
+		margin-bottom: 1rem;
+	}
+	.info_item>span {
+		display: block;
+		width: 100%;
+		height: 2rem;
+		line-height: 2rem;
+	}
+	.info_input {
+		left: 0;
+		bottom: auto;
+		top: 1.2rem;
+	}
+
+	.confirm_change {
+		height: 2.6rem;
+		line-height: 2.6rem;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+	}
+	.info_item input {
+		border: 1px solid #93732b;
+		line-height: 2rem;
+		height: 2rem;
+		padding-left: .5rem;
+		box-sizing: border-box;
+	    width: 100%;
+	}
+}

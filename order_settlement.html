@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Cache-Control" content="max-age=3600" />
+	<meta http-equiv="Cache-Control" content="no-transform"/>
+	<meta name="MobileOptimized" content="240" />
+	<meta name="apple-touch-fullscreen" content="YES" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/function.js"></script>
+	<script src="js/header.js"></script>
+	<!-- <script src="js/set_rem.js"></script> -->
+	<!-- <script src="js/left_menu.js"></script> -->
+	<link href="styles/cn.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="styles/scrollbar.css">
+	<title>order_settlement</title>
+</head>
+<body>
+<script> 
+	if (/*@cc_on!@*/false) { 
+		document.documentElement.className+=' ie10'; 
+	} 
+</script>
+
+<!--[if (IE) & (lt IE 10)]>  
+	<script>
+		$(function(){
+			if(!window.location.href.match('browser_version.php')) {
+				window.location.href="browser_version.php";
+			}
+		});
+	</script>
+<![endif]-->
+
+<div class="customer_service">在线客服</div>
+<div class="to_top" id="toTop"></div>
+<div class="main">
+	<div class="header">
+		<link href="styles/login.css" rel="stylesheet" type="text/css" />
+<div class="login_hover">
+	<div class="login_window">
+		<h2 class="title">登录</h2>
+		<span class="closed_btn" id="loginClosedBtn"></span>
+		<div class="table">
+			<div class="td input_box">
+				<div class="user_name">
+					<input type="text" placeholder="输入账户名/电话号码">
+				</div>
+				<div class="password">
+					<input type="password" placeholder="输入密码">
+				</div>
+				<div class="identifying_code">
+					<input type="text" placeholder="输入验证码">
+					<div class="identifying_code_box">
+						<img src="styles/images/identifying_code_pic.jpg" alt="identifying_code_pic" class="identifying_code_pic">
+						<a href="javascript:void(0)" class="refresh"></a>
+					</div>
+				</div>
+				<div class="login_handle_box">
+					<div class="login_status_box">
+						<label class="login_status"><input type="checkbox">记住密码</label>
+					</div>
+					<a href="javascript:void(0)" class="login">登录</a>
+				</div>
+				<a href="javascript:void(0)" class="forget_pwd">忘记密码</a>
+			</div>
+			<div class="td other_login_box">
+				<h3 class="title">通过以下账户登录</h3>
+				<a href="javascript:void(0)" class="qq_icon"></a>
+				<a href="javascript:void(0)" class="zhifubao_icon"></a>
+				<a href="javascript:void(0)" class="wechat_icon"></a>
+			</div>
+			<div class="register_link_box">未有账号？<a href="javascript:void(0)" class="register_link">注册</a></div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function() {
+		var $loginHover = $('.login_hover');
+		$('#loginClosedBtn').click(function() {
+			$loginHover.hide();
+		});
+
+		$('#login').click(function() {
+			$loginHover.show();
+		});
+	})
+</script>		<link href="styles/register.css" rel="stylesheet" type="text/css" />
+<div class="register_hover">
+	<div class="register_window">
+		<h2 class="title">以会员方式进行注册</h2>
+		<span class="closed_btn" id="closedRegisterBtn"></span>
+		<div class="table">
+			<div class="td input_box">
+				<div class="user_name">
+					<input type="text" placeholder="账号名       6-18个字符">
+				</div>
+				<div class="password">
+					<input type="password" placeholder="请设置密码 6-18位 数字、字母、字符至少包含两种">
+				</div>
+				<div class="confirm_password">
+					<input type="password" placeholder="请确认密码">
+				</div>
+				<div class="phone_number">
+					<input type="text" placeholder="手机号码">
+					<button class="send btn">发送验证码</button>
+				</div>
+				<div class="confirm_password_identify">
+					<input type="text" placeholder="手机验证码">
+					<button class="register btn">注册</button>
+				</div>
+				<div class="register_tip">点击"注册"，您即被视作同意《<a href="javascript:void(0)">UR商城用户注册协议</a>》</div>
+
+			</div>
+			<div class="td other_register_box">
+				<h3 class="title">通过以下账户登录</h3>
+				<a href="javascript:void(0)" class="qq_icon"></a>
+				<a href="javascript:void(0)" class="zhifubao_icon"></a>
+				<a href="javascript:void(0)" class="wechat_icon"></a>
+			</div>
+			<div class="login_link_box">已有账号？<a href="javascript:void(0)" class="login_link">登录</a></div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function() {
+		var $registerHover = $('.register_hover');
+		$('#closedRegisterBtn').click(function() {
+			$registerHover.hide();
+		});
+
+		$('#register').click(function() {
+			$registerHover.show();
+		});
+
+		var $sendVerificationCode = $('.send');
+
+		$sendVerificationCode.click(function() {
+			if(!$sendVerificationCode.hasClass('disable')) {
+				handle($sendVerificationCode, function() {
+					$sendVerificationCode.removeClass('disable');
+					$sendVerificationCode.html('发送验证码');
+				}, 60);
+				$sendVerificationCode.addClass('disable');
+			}
+		});
+	})
+</script>		<link href="styles/forget_pwd.css" rel="stylesheet" type="text/css" />
+<div class="forget_hover">
+	<div class="forget_window">
+		<h2 class="title">重置密码</h2>
+		<span class="closed_btn" id="forgetPwdClosedBtn"></span>
+		<p>您可以通过手机找回密码，稍后我们将发送一条短信帮助您找回密码</p>
+		<div class="input_box">
+			<input type="text" placeholder="输入您的手机号码">
+			<div class="btn_box">
+				<button class="btn send_verification_code">发送验证码</button>
+				<span class="resend_tip">59秒后重发</span>
+			</div>
+		</div>
+		<div class="input_box">
+			<input type="text" placeholder="输入验证码">
+		</div>
+		<div class="input_box">
+			<input type="password" placeholder="输入新密码">
+		</div>
+		<div class="input_box">
+			<input type="password" placeholder="再次输入新密码">
+			<button class="btn">确认新密码</button>
+		</div>
+		<span class="pwd_tip">密码长度8-16位，数字，字母，字符至少包含两种</span>
+	</div>
+</div>
+
+<script>
+	$(function() {
+		var $forgetHover = $('.forget_hover');
+		$('#forgetPwdClosedBtn').click(function() {
+			$forgetHover.hide();
+			$('.login_hover').show();
+		});
+
+		var clientWidth = $(window).width();
+
+		if(clientWidth > 768) {
+			$('.forget_pwd').click(function() {
+				$('.login_hover').hide();
+				$forgetHover.show();
+			});
+		}
+
+		var $sendVerificationCode = $('.send_verification_code');
+
+		$sendVerificationCode.click(function() {
+			if(!$sendVerificationCode.hasClass('disable')) {
+				handle($sendVerificationCode, function() {
+					$sendVerificationCode.removeClass('disable');
+					$sendVerificationCode.html('发送验证码');
+				}, 60);
+				$sendVerificationCode.addClass('disable');
+			}
+		});
+		
+	})
+</script>		<div class="mobile_lang">
+			<span id="mobileLang">English</span>
+		</div>
+		<div class="login_box ofh">
+			<div class="fl">
+				<a href="javascript:void(0)" class="store_icon">店铺</a>
+				|
+				<a href="javascript:void(0)">关于UR</a>
+			</div>
+			<div class="fr">
+				<span class="lang"><a href="javascript:void(0)" id="lang">English</a>
+				|
+				<a href="javascript:void(0)" class="user_icon" id="login">登录</a>
+				|
+				<a href="javascript:void(0)" id="register">注册</a>
+				|
+				<a href="javascript:void(0)" class="collection_icon"></a>
+				|
+				<a href="javascript:void(0)" class="package_icon"></a>
+				
+			</div>
+		</div>
+		<div class="brand_box">
+			<a href="#" class="brand_name">
+				<img src="styles/images/brand_name.png" alt="URBAN REVIVO">
+			</a>
+			<a href="" class="logo fr">
+				<img src="styles/images/logo.gif" alt="UR">
+			</a>
+		</div>
+		<div class="main_nav">
+			<span class="more" id="more"></span>
+			<ul class="nav_list">
+				<li>
+					<a href="#">本周新品</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">女士</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">少女</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">男士</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">儿童</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">配饰</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">活动</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">品牌资讯</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="left_main_nav_out_box" id="leftMainNavOutBox">
+				<div class="left_main_nav_box" id="leftMainNavBox">
+					<span class="hide_nav" id="hideNav"></span>
+					<div class="ofh home_login_box">
+						<a href="javascript:void(0)" class="fl">首页</a>
+						<a href="javascript:void(0)" class="fr">登录/注册</a>
+					</div>
+					<div id="navList" class="left_main_nav_list">
+			        	<div class="content">
+	<ul>
+		<li class="item">
+			<a href="javascript:void(0)">WOMEN1</a><i class="arr_icon"></i>
+			<ul class="sub_list">
+				<li><a href="javascript:void(0)" class="active_link">热销商品</a></li>
+				<li><a href="javascript:void(0)" class="active_link">"美"就你</a></li>
+				<li><a href="javascript:void(0)">新品</a></li>
+				<li><a href="javascript:void(0)">10月新品</a></li>
+				<li><a href="javascript:void(0)">9月新品</a></li>
+				<li><a href="javascript:void(0)">连衣裙</a></li>
+				<li><a href="javascript:void(0)">T恤/衬衫</a></li>
+				<li><a href="javascript:void(0)">夹克/风衣</a></li>
+				<li><a href="javascript:void(0)">毛呢外套</a></li>
+				<li><a href="javascript:void(0)">羽绒服</a></li>
+				<li><a href="javascript:void(0)">棉服</a></li>
+				<li><a href="javascript:void(0)">针织衫</a></li>
+				<li><a href="javascript:void(0)">裤装</a></li>
+				<li><a href="javascript:void(0)">半身裙</a></li>
+				<li><a href="javascript:void(0)">短裙</a></li>
+				<li><a href="javascript:void(0)">下装</a></li>
+				<li><a href="javascript:void(0)">魅力风格</a></li>
+				<li><a href="javascript:void(0)">假日风格</a></li>
+				<li><a href="javascript:void(0)">晚装风格</a></li>
+				<li><a href="javascript:void(0)">休闲风格</a></li>
+				<li><a href="javascript:void(0)">优雅风格</a></li>
+				<li><a href="javascript:void(0)">基本百搭</a></li>
+				<li><a href="javascript:void(0)">冬日出游</a></li>
+				<li><a href="javascript:void(0)">悦动心意</a></li>
+				<li><a href="javascript:void(0)" class="active">针织“芯”意</a></li>
+			</ul>
+		</li>
+		<li class="item">
+			<a href="javascript:void(0)">WOMEN2</a><i class="arr_icon"></i>
+			<ul class="sub_list">
+				<li><a href="javascript:void(0)">连衣裙</a></li>
+				<li><a href="javascript:void(0)">T恤</a></li>
+				<li><a href="javascript:void(0)">衬衫</a></li>
+				<li><a href="javascript:void(0)">夹克/风衣</a></li>
+			</ul>
+		</li>
+		<li class="item">
+			<a href="javascript:void(0)">WOMEN3</a><i class="arr_icon"></i>
+			<ul class="sub_list">
+				<li><a href="javascript:void(0)">连衣裙</a></li>
+				<li><a href="javascript:void(0)">T恤</a></li>
+				<li><a href="javascript:void(0)">衬衫</a></li>
+				<li><a href="javascript:void(0)">夹克/风衣</a></li>
+			</ul>
+		</li>
+		<li class="item">
+			<a href="javascript:void(0)">WOMEN4</a><i class="arr_icon"></i>
+			<ul class="sub_list">
+				<li><a href="javascript:void(0)">连衣裙</a></li>
+				<li><a href="javascript:void(0)">T恤</a></li>
+				<li><a href="javascript:void(0)">衬衫</a></li>
+				<li><a href="javascript:void(0)">夹克/风衣</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>			        </div>
+			        <div class="collection_store_box ofh">
+			        	<a href="javascript:void(0)" class="fl collection_icon">心愿单</a>
+			        	<a href="javascript:void(0)" class="fr store_icon">店铺</a>
+			        </div>
+				</div>
+			</div>
+			<div class="fr search_outer_box">
+				<div class="search_box" id="mainSearchBox">
+					<input type="text" placeholder="输入搜索词..." class="search_input" id="searchInput">
+					<span class="search_clear" id="searchClear"></span>
+					<span class="search_click">搜索</span>
+				</div>
+				<span class="show_search" id="showSearchBtn"></span>
+				
+			</div>
+			<span class="package"></span>
+		</div>
+	</div>
+<link href="styles/order_settlement.css" rel="stylesheet" type="text/css" />
+	<div class="content">
+		<h2 class="title">订单结算</h2>
+		<div class="choose_shipping_address">
+			选择收货地址
+			<span class="fr edit_address">编辑收货地址</span>
+		</div>
+		<div class="mobile_box">
+			<p id="name">李莉莉</p>
+			<p id="address">广东广州西湖路12号广百百货大厦商务楼2层</p>
+			<p id="mobilePhone">手机： 13388888888</p>
+			<p id="phone">电话： 020 - 81008888 - 040</p>
+		</div>
+		<div class="mobile_box">
+			发票
+			<span class="edit_invoice_btn">发票明细（电子）- 个人</span>
+		</div>
+
+		<div class="address_hover hover">
+			<span id="closedInvoiceBox" class="closed_hover_btn"></span>
+			<div class="addrs_list">
+				<div class="addrs_cont default_addrs_box">
+					<div class="addrs_infs">
+						<div class="addrs_box">
+							<div class="radio_btn active"></div>
+							<span class="addr_user_name">李莉莉</span>
+							<div class="address_box">
+								<span class="addr_province">广东</span><span class="addr_city">广州</span><span class="addr_area"></span><span class="addr_street"></span><span class="addr_txt">西湖路12号广百百货大厦商务楼2层</span><span></span>
+							</div>
+						</div>
+						<div class="phone_num">
+							手机：
+							<span>13388888888</span>
+						</div>
+						<div class="t_phone_num">
+							电话：
+							<span class="t_phone_C">020</span><span>-</span><span class="t_phone_N">81008888</span><span>-</span><span class="t_phone_P">040</span>
+						</div>
+					</div>
+					<div class="alter_addrs addrs_btn">[修改]</div>
+					<div class="delt_addrs addrs_btn">[删除]</div>
+					<div class="default_addrs on addrs_btn">默认地址</div>
+				</div>
+				<div class="more_address" id="moreAddress">
+					<a href="javascript:void(0)">更多地址</a>
+					<i class="arr_icon"></i>
+				</div>
+			</div>
+			<div class="other_address_box" id="otherAddressBox">
+				<div class="addrs_cont other_adds_box">
+					<div class="addrs_infs">
+						<div class="addrs_box">
+							<div class="radio_btn"></div>
+							<span class="addr_user_name">李莉莉</span>
+							<div class="address_box">
+								<span class="addr_province">广东</span><span class="addr_city">广州</span><span class="addr_area"></span><span class="addr_street"></span><span class="addr_txt">西湖路12号广百百货大厦商务楼2层</span><span></span>
+							</div>
+						</div>
+						<div class="phone_num">
+							手机：
+							<span>13388888888</span>
+						</div>
+						<div class="t_phone_num">
+							电话：
+							<span class="t_phone_C">020</span><span>-</span><span class="t_phone_N">81008888</span><span>-</span><span class="t_phone_P">040</span>
+						</div>
+					</div>
+					<div class="alter_addrs addrs_btn">[修改]</div>
+					<div class="delt_addrs addrs_btn">[删除]</div>
+					<div class="default_addrs addrs_btn" style="color: #aaa;">设为默认</div>
+				</div>
+				<div class="addrs_cont other_adds_box">
+					<div class="addrs_infs">
+						<div class="addrs_box">
+							<div class="radio_btn"></div>
+							<span class="addr_user_name">李莉莉</span>
+							<div class="address_box">
+								<span class="addr_province">广东</span><span class="addr_city">广州</span><span class="addr_area"></span><span class="addr_street"></span><span class="addr_txt">西湖路12号广百百货大厦商务楼2层</span><span></span>
+							</div>
+							<span></span>
+						</div>
+						<div class="phone_num">
+							手机：
+							<span>13388888888</span>
+						</div>
+						<div class="t_phone_num">
+							电话：
+							<span class="t_phone_C">020</span><span>-</span><span class="t_phone_N">81008888</span><span>-</span><span class="t_phone_P">040</span>
+						</div>
+					</div>
+					<div class="alter_addrs addrs_btn">[修改]</div>
+					<div class="delt_addrs addrs_btn">[删除]</div>
+					<div class="default_addrs addrs_btn" style="color: #aaa;">设为默认</div>
+				</div>
+				<div class="add_new_addrs">
+					<div class="radio_btn"></div>
+						添加新地址
+				</div>
+				<div class="add_new_list">
+					<div class="new_infs_list">
+						<ul>
+							<li class="asterisk_icon">收货人姓名</li>
+							<li>
+								<input type="text" value="" placeholder="长度不超过25个字符" class="input_name normal_input" />
+							</li>
+						</ul>
+					</div>
+					<div class="new_infs_list">
+						<ul>
+							<li class="asterisk_icon">手机号码</li>
+							<li>
+								<input type="text" value="" placeholder="电话号码、手机号码必须填一项" class="input_p_num normal_input" />
+							</li>
+						</ul>
+					</div>
+					<div class="new_infs_list mobile_phone">
+						<ul>
+							<li>电话号码</li>
+							<li>
+								<span><input type="text" value="" class="area_code" placeholder="区号"/></span>
+								<span><input type="text" value="" class="tel_code" placeholder="电话号码"/></span>
+								<span><input type="text" value="" class="tel_extension" placeholder="分区"/></span>
+							</li>
+						</ul>
+					</div>
+					<div class="new_infs_list">
+						<ul>
+							<li>电子邮箱</li>
+							<li>
+								<input type="text" value="" class="input_mail normal_input" />
+							</li>
+						</ul>
+					</div>
+					<div class="new_infs_list">
+						<ul>
+							<li class="asterisk_icon">所在区域</li>
+							<li class="addr_cont">
+								<div class="shop_address_box">
+									<span class="gray " id="province">省</span>
+									<div class="list_out_box">
+										<ul>
+											<li><a href="javascript:void(0)">XXX</a></li>
+											<li><a href="javascript:void(0)">XX</a></li>
+											<li><a href="javascript:void(0)">X</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="shop_address_box">
+									<span class="gray " id="city">市</span>
+									<div class="list_out_box">
+										<ul>
+											<li><a href="javascript:void(0)">XXX</a></li>
+											<li><a href="javascript:void(0)">XX</a></li>
+											<li><a href="javascript:void(0)">X</a></li>
+											<li><a href="javascript:void(0)">XXX</a></li>
+											<li><a href="javascript:void(0)">XX</a></li>
+											<li><a href="javascript:void(0)">X</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="shop_address_box">
+									<span class="gray" id="area">县、区</span>
+									<div class="list_out_box">
+										<ul>
+											<li><a href="javascript:void(0)">XXX</a></li>
+											<li><a href="javascript:void(0)">XX</a></li>
+											<li><a href="javascript:void(0)">X</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="shop_address_box">
+									<span class="gray" id="street">街道</span>
+									<div class="list_out_box">
+										<ul>
+											<li><a href="javascript:void(0)">XXX</a></li>
+											<li><a href="javascript:void(0)">XX</a></li>
+											<li><a href="javascript:void(0)">X</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="new_infs_list">
+						<ul>
+							<li class="asterisk_icon address_detail">详细地址</li>
+							<li>
+								<textarea placeholder="建议您如实填写收货地址，例如街道名称，门牌号码，楼层和房间号等信息" class="detailed_addrs"></textarea>
+								<!-- <input type="text" placeholder="建议您如实填写收货地址，例如街道名称，门牌号码，楼层和房间号等信息" class="detailed_addrs" /> -->
+							</li>
+						</ul>
+					</div>
+					<div class="add_new_sure">
+						<button class="sure_add_btn">确定收货地址</button>
+						<span><span class="radio_btn"></span>设为默认</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="invoice_box hover">
+		 	<span id="closedInvoiceBox" class="closed_hover_btn"></span>
+		 	<div class="title">发票信息：</div>
+		 	<div>
+		 		<span>不开发票</span>
+		 		<a href="javascript:void(0)" class="change_invoice">[修改]</a>
+		 	</div>
+		 	<div class="more_invoice_box">
+		 		<div class="more_invoice_inlineblock_box">
+		 			<div class="invoice_item">
+			 			<div class="text_box"><span class="radio_btn active type_item"></span>普通发票</div>
+					 	<div class="invoice_option_box">
+					 		<div class="text_box"><span class="radio_btn invoice_option active"></span>个人</div>
+							<div class="text_box"><span class="radio_btn invoice_option"></span>公司</div>
+							<div class="invoice_title text_box"><span class="text_name">抬头:</span><input type="text" placeholder="请输入完整的中文名或公司名"/></div>
+					 	</div>
+			 		</div>
+			 		<div class="invoice_item">
+			 			<div class="text_box"><span class="radio_btn type_item"></span>电子发票</div>
+					 	<div class="invoice_option_box">
+					 		<div class="text_box"><span class="radio_btn invoice_option"></span>个人</div>
+							<div class="text_box"><span class="radio_btn invoice_option"></span>公司</div>
+							<div class="invoice_title text_box"><span class="text_name">抬头:</span><input type="text" placeholder="请输入完整的中文名或公司名"/></div>
+					 	</div>
+			 		</div>
+			 		<div class="invoice_item">
+			 			<div class="text_box"><span class="radio_btn type_item"></span>增值税发票</div>
+					 	<div class="invoice_option_box">
+					 		<div class="text_box"><span class="radio_btn invoice_option"></span>个人</div>
+							<div class="text_box"><span class="radio_btn invoice_option"></span>公司</div>
+							<div class="invoice_title text_box"><span class="text_name">抬头:</span><input type="text" placeholder="请输入完整的中文名或公司名"/></div>
+					 	</div>
+			 		</div>
+			 		<div class="invoice_item">
+			 			<div class="text_box"><span class="radio_btn type_item"></span>不开发票</div>
+			 		</div>
+			 		<div class="invoice_btn_box">
+			 			<button class="cpnform_invoice">确认</button>
+			 			<button class="cancel_invoice">取消</button>
+			 		</div>
+					
+					
+		 		</div>
+		 	</div>
+		</div>
+		<div class="clear"></div>
+		<div class="goods_infs">
+			<div class="title goods_info_title">商品信息：</div>
+			<div class="infs_list">
+				<div class="infs_box setFont_C">
+					<div class="left_box">商品</div>
+					<div class="right_box">单价</div>
+					<div class="right_box">优惠</div>
+					<div class="right_box">数量</div>
+					<div class="right_box">小计</div>
+				</div>
+				<div class="infs_box one">
+					<div class="left_box">
+						<div class="pic_box">
+							<img src="styles/images/flash01.jpg">
+						</div>
+						<div class="p_infs_box">
+							<div class="goods_name">UR秋冬款魅力女装修身中长款V领连衣裙</div>
+							<div class="goods_id setFont_C">
+								商品编号：
+								<span>WG15C29R7BN001</span>
+							</div>
+							<div class="color_and_size">
+								<span>颜色：深蓝</span>
+								<span>尺码：s</span>
+							</div>
+						</div>
+					</div>
+					<div class="right_box nums">&yen;299</div>
+					<div class="right_box nums mobile_hide">&yen;10</div>
+					<div class="right_box nums goods_num"><span class="pc_hide">X</span>1</div>
+					<div class="right_box nums mobile_hide">&yen;289</div>
+				</div>
+				<div class="infs_box">
+					<div class="left_box">
+						<div class="pic_box">
+							<img src="styles/images/flash01.jpg">
+						</div>
+						<div class="p_infs_box">
+							<div class="goods_name">UR秋冬款魅力女装修身中长款V领连衣裙</div>
+							<div class="goods_id setFont_C">
+								商品编号：
+								<span>WG15C29R7BN001</span>
+							</div>
+							<div class="color_and_size">
+								<span>颜色：深蓝</span>
+								<span>尺码：s</span>
+							</div>
+						</div>
+					</div>
+					<div class="right_box nums">&yen;299</div>
+					<div class="right_box nums mobile_hide">&yen;10</div>
+					<div class="right_box nums goods_num"><span class="pc_hide">X</span>1</div>
+					<div class="right_box nums mobile_hide">&yen;289</div>
+				</div>
+			</div>
+		</div>
+		<div class="last_main">
+			<div class="left_box_cont">
+				<div class="sales_num">
+					<div class="mobile_block">促销代码</div>
+					<div class="salse_input_box">
+						<input type="text" value='' name="salesId" id="salesId" />
+					</div><div class="btn_box">
+						<button id="sureBtn">确定</button>
+					</div>
+					<div class="sales_sure_box choose_preferent selected">满200减20优惠活动</div>
+				</div>
+				<div class="promotions">
+					<span class="title">优惠活动</span>  
+					<span class="p_active choose_preferent selected">全店满百包邮</span>
+					<span class="p_active choose_preferent selected">满699立减100</span>
+				</div>
+				<div class="order_note">
+					<span>订单备注</span>
+					<textarea></textarea>
+				</div>
+			</div>
+			<div class="right_box_cont">
+				<div class="all_price">
+					<div class="left_cont">2件商品</div>
+					<div class="center_cont">
+						<ul>
+							<li><span>总计</span>&yen;358</li>
+							<li><span>优惠</span>-&yen;0</li>
+							<li><span>运费</span>+&yen;0</li>
+							<!-- <li><span>获得积分</span>35</li> -->
+							<li><span>总数</span>&yen;368</li>
+						</ul>
+					</div>
+				</div>
+				<div class="sure_pay">
+					<button>去付款</button>
+				</div>
+			</div>
+		</div>	
+	</div>
+<script>
+	//颜色、尺码选择
+	$(document).ready(function() {
+		var clientWidth = $(window).width();
+		/*get input address*/
+		var add_new_list=$(".add_new_list");
+		var input_name=add_new_list.find(".input_name");
+		var input_p_num=add_new_list.find(".input_p_num");
+		var area_code=add_new_list.find(".area_code");
+		var tel_code=add_new_list.find(".tel_code");
+		var tel_extension=add_new_list.find(".tel_extension");
+		var detailed_addrs=add_new_list.find(".detailed_addrs");
+		var input_mail=add_new_list.find(".input_mail");
+		var province=add_new_list.find("#province");
+		var city=add_new_list.find("#city");
+		var area=add_new_list.find("#area");
+		var street=add_new_list.find("#street");
+		var isNewAddr="";
+		var changeElem="";
+
+		//地址选择
+		$('#otherAddressBox').delegate('.addrs_infs', 'click', function() {
+			var addrs_cont=$(this).parents(".addrs_cont");
+			$(this).find('.radio_btn').addClass('active');
+			addrs_cont.siblings().find('.radio_btn').removeClass('active');
+			//设置新地址
+			$addNew.removeClass("active");
+			$('.add_new_list').hide();
+		});
+
+		//默认地址
+		$('#otherAddressBox').delegate('.default_addrs','click',function(){
+			$('.default_addrs').html('设为默认').css('color', '#aaa').removeClass('on');
+			$('.default_addrs').parent().removeClass('default_addrs_box').addClass('other_adds_box');
+			setDefaultEven($(this));
+
+		})
+
+		$('.default_addrs_box').delegate('.default_addrs', 'click', function() {
+			$('.default_addrs').html('设为默认').css('color', '#aaa');
+			$('.default_addrs_box').find('.default_addrs').removeClass('on');
+			$('.default_addrs_box').removeClass('default_addrs_box').addClass('other_adds_box');
+			$(this).parent().addClass('default_addrs_box');
+			$(this).addClass("on").html("默认地址").css('color', '#94742b');
+		})
+		if(clientWidth > 768) {
+			$('.address_hover').delegate('.other_adds_box', 'mouseenter', function() {
+				$(this).find('.default_addrs').html("设为默认").addClass('on').css('color','#aaa');
+			});
+			$('.address_hover').delegate('.other_adds_box', 'mouseleave', function() {
+				$(this).find('.default_addrs').removeClass('on');
+			});
+		}
+
+		if(clientWidth <= 768) {
+			$('.sure_add_btn').click(function() {
+				$('.add_new_list').hide();
+			});
+
+			$('.edit_invoice_btn').click(function() {
+				$('.invoice_box').show();
+			});
+		}
+
+		$('.edit_address').click(function() {
+			$('body').css('min-height', $('.address_hover').height());
+			$('.address_hover').show();
+		});
+
+		//修改
+		$('#otherAddressBox').delegate('.alter_addrs', 'click', function() {
+			isNewAddr=false;
+			$addNew.removeClass("active");
+			var addrs_cont=$(this).parents(".addrs_cont");
+			changeElem=addrs_cont;
+			var radio_btn=addrs_cont.find(".radio_btn");
+			var addr_user_name=addrs_cont.find(".addr_user_name");
+			var addr_txt=addrs_cont.find(".addr_txt");
+			var phone_num=addrs_cont.find(".phone_num span");
+			var t_phone_C=addrs_cont.find(".t_phone_C");
+			var t_phone_N=addrs_cont.find(".t_phone_N");
+			var t_phone_P=addrs_cont.find(".t_phone_P");
+			var addr_province=addrs_cont.find(".addr_province");
+			var addr_city=addrs_cont.find(".addr_city");
+			var addr_area=addrs_cont.find(".addr_area");
+			var addr_street=addrs_cont.find(".addr_street");
+
+			
+			/*assignment*/
+			addrs_cont.siblings().find(".radio_btn").removeClass("active");
+			radio_btn.addClass("active");
+			input_name.val(addr_user_name.html());
+			input_p_num.val(phone_num.html());
+			area_code.val(t_phone_C.html());
+			tel_code.val(t_phone_N.html());
+			tel_extension.val(t_phone_P.html());
+			detailed_addrs.val(addr_txt.html());
+			if(addr_province.html()){
+				 province.removeClass("gray");
+				 province.html(addr_province.html());
+			}else{
+				province.html("省");
+			}
+
+			if(addr_city.html()){
+				 city.removeClass("gray");
+				 city.html(addr_city.html());
+			}else{
+				city.html("市");
+			}
+
+			if(addr_area.html()){
+				 area.removeClass("gray");
+				 area.html(addr_area.html());
+			}else{
+				area.html("县、区");
+			}
+
+			if(addr_street.html()){
+				 street.removeClass("gray");
+				 street.html(addr_street.html());
+			}else{
+				street.html("街");
+			}
+			/**/
+			add_new_list.show();
+		});
+
+		//删除
+		$('#otherAddressBox').delegate('.delt_addrs', 'click', function() {
+			$(this).parent().remove();
+		});
+
+		/*-------------------------------------------------------------------*/
+		//添加新地址
+		var add_new_addrs =$('.add_new_addrs')
+		var $addNew = $('.add_new_addrs').find('.radio_btn');
+		var $setDefault = $('.add_new_sure').find('.radio_btn');
+		var $sureAddnew = $('.add_new_sure').find('.sure_add_btn');
+		add_new_addrs.bind('click',function(){
+			isNewAddr=true;
+			$("#otherAddressBox").find(".radio_btn").removeClass("active");
+			input_name.val("");
+			input_p_num.val("");
+			area_code.val("");
+			tel_code.val("");
+			tel_extension.val("");
+			detailed_addrs.val("");
+			input_mail.val("");
+			province.html("省").addClass("gray");
+			city.html("市").addClass("gray");
+			area.html("县、区").addClass("gray");
+			street.html("街").addClass("gray");
+
+			$addNew.addClass('active');
+			$('.add_new_list').show();
+
+		});
+
+		$($setDefault).bind('click',function(){
+			$(this).toggleClass('active');
+		});
+
+		$($sureAddnew).bind('click',function(){
+			var addr_user_name,addr_city,addr_txt, phone_num,t_phone_C,t_phone_N,t_phone_P;
+			var add_new_sure=$(this).parent(".add_new_sure");
+			if(isNewAddr){
+
+				var html=$('<div class="addrs_cont other_adds_box">\
+						<div class="addrs_infs">\
+							<div class="addrs_box">\
+								<div class="radio_btn"></div>\
+								<span class="addr_user_name">李莉莉</span>\
+								<span class="addr_province">广东</span><span class="addr_city">广州</span><span class="addr_area"></span><span class="addr_street"></span>\
+								<span class="addr_txt">西湖路12号广百百货大厦商务楼2层</span>\
+								<span></span>\
+							</div>\
+							<div class="phone_num">\
+								手机：\
+								<span>13388888888</span>\
+							</div>\
+							<div class="t_phone_num">\
+								电话：\
+								<span class="t_phone_C">020</span>\
+								<span>-</span>\
+								<span class="t_phone_N">81008888</span>\
+								<span>-</span>\
+								<span class="t_phone_P">040</span>\
+							</div>\
+						</div>\
+						<div class="alter_addrs addrs_btn">[修改]</div>\
+						<div class="delt_addrs addrs_btn">[删除]</div>\
+						<div class="default_addrs addrs_btn" style="color: #aaa;">设为默认</div>\
+					</div> ');
+			addr_user_name=html.find(".addr_user_name");
+			addr_txt=html.find(".addr_txt");
+			phone_num=html.find(".phone_num span");
+			t_phone_C=html.find(".t_phone_C");
+			t_phone_N=html.find(".t_phone_N");
+			t_phone_P=html.find(".t_phone_P");
+			addr_province=html.find(".addr_province");
+			addr_city=html.find(".addr_city");
+			addr_area=html.find(".addr_area");
+			addr_street=html.find(".addr_street");
+
+
+			// addr_user_name.html(input_name.val());
+			// phone_num.html(input_p_num.val());
+			// t_phone_C.html(area_code.val());
+			// t_phone_N.html(tel_code.val());
+			// t_phone_P.html(tel_extension.val());
+			// addr_txt.html(detailed_addrs.val());
+			// addr_province.html(province.html());
+			// addr_city.html(city.html);
+			// addr_area.html(area.html);
+			// addr_street.html(street.html);
+			
+
+			$('.add_new_addrs').before($(html));
+			// $("#otherAddressBox").append();
+
+			if($setDefault.hasClass("active")){
+				var elem=html.find(".default_addrs");
+				setDefaultEven(elem);
+			}
+
+			}else{
+				addr_user_name=changeElem.find(".addr_user_name");
+				addr_txt=changeElem.find(".addr_txt");
+				phone_num=changeElem.find(".phone_num span");
+				t_phone_C=changeElem.find(".t_phone_C");
+				t_phone_N=changeElem.find(".t_phone_N");
+				t_phone_P=changeElem.find(".t_phone_P");
+				addr_province=changeElem.find(".addr_province");
+				addr_city=changeElem.find(".addr_city");
+				addr_area=changeElem.find(".addr_area");
+				addr_street=changeElem.find(".addr_street");
+				if($setDefault.hasClass("active")){
+					var elem=changeElem.find(".default_addrs");
+					setDefaultEven(elem);
+				}
+			}
+
+
+			addr_user_name.html(input_name.val());
+			phone_num.html(input_p_num.val());
+			t_phone_C.html(area_code.val());
+			t_phone_N.html(tel_code.val());
+			t_phone_P.html(tel_extension.val());
+			addr_txt.html(detailed_addrs.val());
+			addr_province.html(province.html()!="省" ? province.html() : "");
+			addr_city.html(city.html()!="市" ? city.html() : "");
+			addr_area.html(area.html()!="县、区" ?  area.html() : "");
+			addr_street.html(street.html()!="街" ? street.html() : '');
+
+			$('.add_new_list').hide();
+			$addNew.removeClass('active');
+
+		});
+		/*--------------------------------------------------------------------*/
+		//发票
+		var $ul_left =$('.ul_left');
+		$ul_left.find("li").each(function(index,elem){
+			var self=$(this);
+			self.unbind("click");
+			self.bind("click",function(){
+				self.siblings("li").find(".radio_btn").removeClass("active");
+				self.find(".radio_btn").addClass("active");
+			})
+		})
+
+		//个人，公司
+		$('.ul_right').find("li").unbind("click");
+		$('.ul_right').find("li").bind("click",function(){
+			var radio_btn=$(this).find(".radio_btn");
+			if(radio_btn.length>0){
+				$(".ul_right").find(".radio_btn").removeClass("active");
+				radio_btn.addClass("active");
+			}
+		})
+
+		/*--------------------------------------------------------------------*/
+		var leftHeight = $('.left_box').height();
+		$('.nums').css('line-height',leftHeight/2);
+		/*----------------------------------------*/
+		//促销代码
+		$('#sureBtn').click(function(){
+			var salesidValue = $('#salesId').val();
+			if(salesidValue!=""){
+				$('#salesId').val("");
+				$('.sales_sure_box').show();
+			}
+			
+		})
+		//选择优惠
+		function ChoosePreferent(){
+			$(".choose_preferent").unbind("click");
+			$(".choose_preferent").bind("click",function(){
+				if($(this).hasClass("selected")){
+					$(this).removeClass("selected");
+				}else{
+					$(this).addClass("selected");
+				}
+			});
+		}
+		ChoosePreferent();
+		//省，市，区，
+		$('.shop_address_box').click(function(e) {
+	    	e.stopPropagation();
+	    	$('.shop_address_box').find(".list_out_box").css('zIndex', 2).slideUp();
+	    	var $listOutBox = $(this).find('.list_out_box');
+	    	if($listOutBox.is(':visible')) {
+	    		$listOutBox.css('zIndex', 2).slideUp(200);
+	    	} else {
+	    		$listOutBox.css('zIndex', 3).slideDown(200);
+	    	}
+	    	
+	    });
+	    $('.list_out_box').find('ul').click(function(e) {
+	    	e.stopPropagation();
+	    	return false;
+	    });
+	    $('.list_out_box').find('ul').delegate('a', 'click', function(e) {
+	    	e.stopPropagation();
+	    	$(this).parents('.shop_address_box').find('span').removeClass("gray").html($(this).html());
+	    	$(this).parents('.list_out_box').slideUp(200);
+	    });
+	    $('.on_shop_check').click(function() {
+	    	$('.list_out_box').slideUp(200);
+	    });
+
+	    $('.closed_hover_btn').click(function() {
+	    	$('.hover').hide();
+	    });
+
+	    $('.input_mail.normal_input').bind('focus', function() {
+	    	$('.list_out_box').slideUp();
+	    });
+
+	    $('.change_invoice').click(function() {
+	    	var $moreInvoiceBox = $('.more_invoice_box');
+	    	if($moreInvoiceBox.is(':visible')) {
+	    		$moreInvoiceBox.slideUp();
+	    	} else {
+	    		$moreInvoiceBox.slideDown();
+	    	}
+	    });
+
+	    $('.type_item').click(function() {
+	    	$('.radio_btn').removeClass('active');
+	    	$(this).addClass('active');
+	    	$(this).parents('.invoice_item').find('.invoice_option').eq(0).addClass('active');
+	    });
+
+	    $('.invoice_option').click(function() {
+	    	$(this).parents('.invoice_option_box').find('.invoice_option').removeClass('active');
+	    	$(this).addClass('active');
+	    });
+
+	    $('.cpnform_invoice').click(function() {
+	    	$('.more_invoice_box').slideUp();
+	    });
+	    $('.cancel_invoice').click(function() {
+	    	$('.more_invoice_box').slideUp();
+	    });
+
+
+		/*----------------------------------------*/
+
+		//设置默认
+		function setDefaultEven(clickElem){
+			var addrs_cont=$(clickElem).parent();
+			addrs_cont.siblings().find(".default_addrs").removeClass("on");
+			addrs_cont.siblings().addClass("other_adds_box").removeClass("default_addrs_box");
+			addrs_cont.addClass("default_addrs_box").removeClass("other_adds_box");
+			addrs_cont.find(".default_addrs").addClass("on").html("默认地址").css('color', '#94742b');
+		}
+	});
+
+	$(function() {
+		$('#moreAddress').click(function() {
+			var $otherAddressBox = $('#otherAddressBox');
+			if($otherAddressBox.is(':visible')) {
+				$otherAddressBox.slideUp();
+			} else {
+				$otherAddressBox.slideDown();
+			}
+		});
+	})
+</script>
+<div class="footer">
+
+			<div class="share_box">
+				<h2>分享</h2>
+				<div class="share_type">
+					<span class="micro_blog share_icon" id="microBlog"></span>
+					<span class="wechat share_icon" id="wechat"></span>
+					<span class="qr_code">
+						<img src="styles/images/qr_code.png" alt="">
+						<p>微信扫一扫 分享给</p>
+						<p>微信好友或 微信好友圈</p>
+						<i class="closed_btn" id="closedBtn">x</i>
+					</span>
+				</div>
+			</div>
+			<div class="email_box">
+				<div class="email_input_box">
+					<input type="text" class="email_input" placeholder="输入邮箱 立即订阅UR最新流行趋势">
+					<a href="javascript" class="email_btn">订阅</a>
+				</div>
+				<!-- <div class="email_btn">订阅UR电子邮件</div> -->
+				<!-- <div class="country_select_box fl">
+					<p class="select_tip">选择国家</p>
+					<div class="country_select" id="countrySelect">
+						<span>中国</span>
+						<div class="country_list_box" id="countryListBox">
+							<div id="countryList" class="country_list">
+					        	<div class="content">
+					        		<ul>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        		</ul>
+					        	</div>
+					        </div>
+						</div>
+					</div>	
+				</div>
+				<div class="language_select_box fr">
+					<p class="select_tip">选择语言</p>
+					<div class="language_select" id="languageSelect">
+						<span>中文</span>
+						<div class="language_list_box" id="languageListBox">
+							<div id="languageList" class="language_list">
+					        	<div class="content">
+					        		<ul>
+					        			<li><a href="#">ENGLISH</a></li>
+				        			<li><a href="#">中文</a></li>
+					        		</ul>
+					        	</div>
+					        </div>
+						</div>
+					</div>
+				</div> -->
+			</div>
+			<div class="clear"></div>
+			<div class="footer_nav">
+				<!-- <ul class="footer_nav_item">
+					<li class="title"><a>新手上路</a></li>
+					<li>
+						<ul class="sub_list">
+							<li><a href="#">会员制度</a></li>
+							<li><a href="#">发票制度</a></li>
+							<li><a href="#">常见问题</a></li>
+							<li><a href="#">在线客服</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="footer_nav_item">
+					<li class="title"><a>支付方式</a></li>
+					<li>
+						<ul class="sub_list">
+							<li><a href="#">支付宝支付</a></li>
+							<li><a href="#">微信支付</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="footer_nav_item">
+					<li class="title"><a>物流配送</a></li>
+					<li>
+						<ul class="sub_list">
+							<li><a href="#">配送方式</a></li>
+							<li><a href="#">门店自提</a></li>
+							<li><a href="#">配送范围及时间</a></li>
+							<li><a href="#">配送状态查询</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="footer_nav_item">
+					<li class="title"><a>售后服务</a></li>
+					<li>
+						<ul class="sub_list">
+							<li><a href="#">咨询与投诉</a></li>
+							<li><a href="#">退换货申请</a></li>
+							<li><a href="#">退换货政策</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="footer_nav_item">
+					<li class="title"><a>购物指南</a></li>
+					<li>
+						<ul class="sub_list">
+							<li><a href="#">注册登录</a></li>
+							<li><a href="#">密码相关</a></li>
+							<li><a href="#">购物流程</a></li>
+							<li><a href="#">服务条款</a></li>
+						</ul>
+					</li>
+				</ul> -->
+				<ul class="new_footer_nav_item">
+					<li><a href="javascript:void(0)">App</a></li><li><a href="javascript:void(0)">购买指南</a></li><li><a href="javascript:void(0)">常见问题</a></li><li><a href="javascript:void(0)">支付</a></li><li><a href="javascript:void(0)">配送</a></li><li><a href="javascript:void(0)">退货</a></li><li><a href="javascript:void(0)">我的账号</a></li>
+				</ul>
+			</div>
+			<div class="bottom_box">
+				<span class="long_text">加盟 | 职业机会 |</span> ©2016 URBAN REVIVO ALL RIGHTS RESERVED | 粤ICP备13081728号 | TERMS AND CONDITIONS
+			</div>
+		</div>
+	</div>
+	<script src="js/scrollbar-with-mousewheel.min.js"></script>
+	<script src="js/perfect-scrollbar2.js"></script>
+	<script src="js/footer.js"></script>
+	<script src="js/confirm.js"></script>
+	<script>
+		// URConfirm.confirm函数有多个参数依次为 fn, args, msg, okText, cancelText, isGold
+		// 分别为点击确定按钮后的回调函数， 传递给回调函数的参数， 弹框中的信息，确定按钮的文本，取消按钮的文本, 第二个按钮是否使用金色背景
+		// URConfirm.confirm(
+		// 	function(){
+		// 		console.log('you click ok');
+		// 	}, null, '<h2>标题</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat debitis nemo rerum quos illo non inventore iure saepe expedita molestiae dolorem, numquam blanditiis placeat possimus totam quidem nihil reiciendis. Libero!</p>', null, null, true
+		// );
+	</script>

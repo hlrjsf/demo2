@@ -1,0 +1,80 @@
+.order_info_box {
+	background: #FBF9F5;
+	overflow: hidden;
+	padding: 1rem 0;
+	font-size: .9rem;
+}
+
+.order_info {
+	padding-left: 1rem;
+}
+.order_info .tip {
+	color: #969696;
+	font-size: .7rem;
+}
+
+.pay_info_box {
+	text-align: right;
+	padding-right: 2rem;
+}
+.pay_type {
+	color: #969696;
+}
+
+.pay_type:hover {
+	color: #93732b;
+}
+
+.pay_box {
+	border: 2px solid #93732b;
+	border-left: none;
+	border-right: none;
+	text-align: center;
+	padding: 2rem 0;
+	margin-top: 3.2rem;
+}
+
+.pay_qr_code, .pay_tip {
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 320px;
+}
+
+.pay_tip {
+	max-width: 320px;
+	margin-left: 1rem;
+}
+
+.pay_qr_code img, .pay_tip img {
+	width: 100%;
+}
+
+.qr_code_box {
+	border: 1px solid #93732b;
+	padding: 1rem;
+}
+
+.qr_code_box, .pay_text_box {
+	display: block;
+}
+
+.pay_text_box {
+	background: #93732b;
+	color: #fff;
+	text-align: center;
+	font-size: .8rem;
+	padding: 1rem;
+	margin-top: 10px;
+}
+
+.pay_text:before {
+	content: '';
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	margin-right: 10px;
+	vertical-align: middle;
+	background: url('images/pay_icon.png') center no-repeat;
+	background-size: 1rem auto;
+}
+

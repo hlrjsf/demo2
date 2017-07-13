@@ -1,0 +1,116 @@
+.return_step{
+	margin-bottom:2.5rem;
+}
+.return_step ul{
+	height:3rem;
+}
+.return_step li{
+	position:relative;
+	width:27%;
+	float:left;
+}
+.return_step li.last_step{
+	width:19%;
+}
+.return_step li.last_step .stay_write{
+	width:100%;
+}
+.return_step li i{
+	content:"";
+	position:absolute;
+	top:50%;
+	right:0px;
+	width:100%;
+	border-bottom:1px solid #898989;
+	transform:translateY(-50%);
+	-webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%); 
+    -o-transform: translateY(-50%);
+}
+
+.return_step .stay_write{
+	position:relative;
+	width:60%;
+	height:3rem;
+	line-height:3rem;
+	text-align:center;
+	 -moz-box-sizing: border-box;  
+	 -webkit-box-sizing: border-box; 
+	 -o-box-sizing: border-box; 
+	 -ms-box-sizing: border-box; 
+	 box-sizing: border-box;
+}
+.stay_write span{
+	display:inline-block;
+	vertical-align: top;
+}
+.stay_write span:nth-of-type(1){
+	font-size:1.5rem;
+}
+.stay_write{
+	color:#ababab;
+	background:url(images/uncomplete_step.png) center center;
+	background-size:100% 100%;
+}
+.complete .stay_write{
+	color:#93732b;
+	background:url(images/complete_step.png) center center;
+	background-size:100% 100%;
+}
+.last_step .stay_write{
+	color:#ababab;
+	background:url(images/last_uncomplete_step.png) center center;
+	background-size:100% 100%;
+}
+.last_step.complete  .stay_write{
+	color:#93732b;
+	background:url(images/last_complete_step.png) center center;
+	background-size:100% 100%;
+}
+
+/*mobile*/
+@media only screen and (max-width: 768px){
+.return_step li i{
+	display:none;
+}
+.return_step{
+margin-bottom:1rem;
+}
+.return_step ul{
+	overflow:hidden;
+	height:2.5rem;
+}
+.return_step li{
+	width:27.2%;
+	float:left;
+	margin-left:-3%;
+	position:relative;
+	text-align:center;
+}
+.return_step li:nth-of-type(1){
+	margin-left:0px;
+	z-index:4;
+}
+.return_step li:nth-of-type(2){
+	z-index:3;
+}
+.return_step li:nth-of-type(3){
+	z-index:2;
+}
+.return_step li:nth-of-type(4){
+	z-index:1;
+	width:27.2%;
+}
+.return_step .stay_write{
+	line-height:2.5rem;
+	height:2.5rem;
+	width:100%;
+}
+.return_step .stay_write span{
+	font-size:.7rem;
+}
+.return_step .stay_write span:nth-of-type(1){
+	font-size:1.2rem;
+}
+}

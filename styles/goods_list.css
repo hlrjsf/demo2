@@ -1,0 +1,11 @@
+.left_bar_content h2 {
+	display: none;
+}
+
+h2.title {
+	margin-bottom: 0;
+}
+
+.right_goods_lists .title {
+	font-size: .9rem;
+}

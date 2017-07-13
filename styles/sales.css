@@ -1,0 +1,88 @@
+.picture_box{
+	overflow: hidden;
+	padding-bottom: 70px;
+}
+.swiper-container {
+    width: 100%;
+    height: 53%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 12px;
+    background: url('images/next_arrow.png') center no-repeat;
+    background-size: 100% auto;
+}
+
+.swiper-button-prev {
+    background-image: url('images/pre_arrow.png')
+}
+
+.content img {
+	width: 100%;
+}
+.tip {
+    position: absolute;
+    left: 2rem;
+    bottom: 1.5rem;
+    font-size: .7rem;
+    cursor: pointer;
+    z-index: 100;
+}
+.tip span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.date_list2 {
+    display: inline-block;
+    vertical-align: middle;
+    display: none;
+}
+
+.date_list2 li {
+    display: inline-block;
+    float: left;
+    padding-left: 2rem;
+}
+.date_list2 .active a {
+    color: #93732b;
+    text-decoration: underline;
+}
+
+.date_list2 a:hover {
+    color: #93732b;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px){
+	.picture_box {
+	    margin-left: -2%;
+	    margin-right: -2%;
+	}
+	.swiper-button-next,
+    .swiper-button-prev, .tip {
+        display: none;
+    }
+
+}

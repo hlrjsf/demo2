@@ -1,0 +1,158 @@
+h2.title {
+	text-align: center;
+	margin: 2rem auto;
+	letter-spacing: .32rem;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 53%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 12px;
+    background: url('images/next_arrow.png') center no-repeat;
+    background-size: 100% auto;
+}
+
+.swiper-button-prev {
+    background-image: url('images/pre_arrow.png')
+}
+
+.picture_box img {
+	width: 100%;
+}
+
+.lists_box {
+	padding: 0 2rem;
+	font-size: .8rem;
+	margin: 2rem 0 4rem 0;
+}
+
+.lists_title {
+	height: 2rem;
+	line-height: 2rem;
+}
+.lists li {
+	display: inline-block;
+	margin-right: 2.5rem;
+	margin-bottom: 1rem;
+}
+.lists a:hover,
+.lists a.active {
+	color: #93732b;
+}
+
+@media only screen and (max-width: 1512px) {
+	.lists li {
+		display: inline-block;
+	}
+	.lists li + li {
+		margin-left: 3%;
+	}
+}
+
+@media only screen and (max-width: 1080px) {
+	.lists_box .lists li {
+		margin: .2rem 1.25rem .8rem 0;
+	}
+	.lists li:last {
+		margin-right: 0;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.picture_box {
+		margin-left: -2%;
+		margin-right: -2%;
+	}
+	.lists_box {
+		width: 100%;
+		padding-left: 0;
+	}
+	h2.title {
+		position: absolute;
+		left: 50%;
+		top: 4.25rem;
+		transform: translateX(-50%);
+		-ms-transform: translateX(-50%); 	
+		-moz-transform: translateX(-50%); 	
+		-webkit-transform: translateX(-50%); 
+		-o-transform: translateX(-50%);
+		z-index: -1;
+	}
+	.lists_title {
+		width: 25%;
+		text-align: center;
+		color: #848484;
+	}
+	.lists {
+		overflow: hidden;
+		text-align: center;
+	}
+	.lists li {
+		float: left;
+		width: 25%;
+		margin-right: 0 !important;
+	}
+	
+	a:active {
+		color: #93732b;
+	}
+
+	.magazine_list {
+		height: 7rem;
+		overflow: hidden;
+	}
+	.pullUp {
+		text-align: center;
+	}
+	.load_tip {
+		margin-top: 1rem;
+		text-align: center;
+	}
+	.load_tip span{
+		display: inline-block;
+		height: .7rem;
+		width: .7rem;
+		background: url('images/load_more.png') center no-repeat;
+		background-size: 100% auto;
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		display: none;
+	}
+
+	.ur_video_title.title {
+		position: static;
+		transform: none;
+	    -ms-transform: none;
+	    -moz-transform: none;
+	    -webkit-transform: none;
+	    -o-transform: none;
+	}
+}
+

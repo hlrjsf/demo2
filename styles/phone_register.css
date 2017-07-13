@@ -1,0 +1,54 @@
+.m_other_register_box {
+	text-align: center;
+	margin: 3rem 0;
+}
+
+.left_main_nav_list .content {
+	padding-left: 0;
+}
+
+.btn {
+	display: block;
+	background: #93732b;
+	outline: none;
+	border: none;
+	color: #fff;
+	padding: .8rem 0;
+	
+}
+.m_register {
+	width: 100%;
+	margin: 2rem auto;
+}
+.m_send_identifying_code {
+	width: 35%;
+	margin: 2rem auto .32rem auto;
+}
+.m_send_identifying_code.disable {
+	background: #aaa;
+}
+.tip {
+	display: block;
+	font-size: .7rem;
+	color: #ccc;
+	text-align: center;
+}
+
+.notice {
+	text-align: center;
+	color: #ccc;
+	margin: 1rem auto;	
+}
+
+.notice a {
+	color: #ccc;
+}
+
+.m_login_link {
+	text-align: center;
+}
+
+.notice a,
+.m_login_link a {
+	text-decoration: underline;
+}

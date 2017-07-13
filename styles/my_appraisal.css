@@ -1,0 +1,228 @@
+body{
+	font-size: .8rem;
+}
+h3 {
+	font-size: .9rem;
+	font-weight: bold;
+}
+.content{
+	padding: 0 2rem;
+}
+.right_content h3{
+	display: inline-block;
+}
+/*selectList*/
+.select_list{
+	float: right;
+	position: relative;
+}
+ .select_box{
+	min-width: 7rem;
+	display: inline-block;
+	position: relative;
+	text-align: left;
+	background: url(images/light_arrow_down.png) 98% center no-repeat;
+	background-size: .7rem auto;
+	text-align: left;
+}
+.select_box.active {
+	background: url(images/light_arrow_up.png) 98% center no-repeat;
+	background-size: .7rem auto;
+}
+.option{
+	min-width: 7rem;
+	position: absolute;
+	margin-top: 2px;
+	right: 0;
+	border: solid 1px #94742b;
+	z-index: 10000;
+	overflow: hidden;
+	display: none;
+	background: #fff;
+}
+.option a{
+	width: 100%;
+	display: block;
+	line-height: 2rem;
+	text-align: center;
+}
+.option a:hover{
+	color: #b28750;
+}
+/*------------------------------------*/
+.infs_title{
+	height: 1.5rem;
+	line-height: 1.5rem;
+	margin-top: .5rem;
+	color: #fff;
+	background: #93732b;
+	overflow: hidden;
+}
+.infs_title div{
+	float: left;
+}
+.p_infs{
+	width: 43%;
+	padding-left: 2%;
+}
+.p_text{
+	width: 35%;
+	text-align: center;
+}
+.date{
+	width: 18%;
+	text-align: center;
+}
+.appraisal_list{
+	padding: 1rem 0;
+	border-bottom: 1px solid #93732b;
+	overflow: hidden;
+}
+.left_box{
+	width: 45%;
+}
+.left_box{
+	display: table-cell;
+}
+.left_box div{
+	float: left;
+}
+.pic_box{
+	width: 24%;
+	margin-right: 4%;
+}
+.pic_box img{
+	width: 100%;
+}
+.order_num, .p_name, .p_num, .p_color_size{
+	width: 72%;
+}
+.p_name{
+	padding-top: .5rem;
+}
+.p_nmu{
+	font-size: .7rem;
+	padding: .3rem 0 1rem 0;
+	color: #959595;
+}
+.p_color_size div{
+	display: inline-block;
+	margin-right: 1rem;
+}
+.right_box{
+	width: 55%;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+.time, .text_box{
+	float: left;
+}
+.time{
+	width: 30%;
+	text-align: center;
+}
+.text_box{
+	width: 70%;
+	text-align: left;
+}
+.appraisal_infs div.loading{
+	display: none;
+}
+@media only screen and (max-width: 768px) {
+	.content{
+		padding: 0;
+		margin-top: 3rem;
+	}
+	.right_content h3{
+		display: none;
+	}
+	.select_list{
+		position: absolute;
+		right: 2%;
+		margin-top: -2rem;
+	}
+	.select_box{
+		border-bottom: 1px solid #93732b;
+	}
+	.option{
+		margin-top: 0;
+	}
+	.infs_title, .pages_num{
+		display: none;
+	}
+	.left_box, .right_box{
+		width: 96%;
+		margin: 0 auto;
+		display: block;
+		overflow: hidden;
+	}
+	.left_box{
+		padding-bottom: .8rem;
+		border-bottom: 1px solid #93732b;
+	}
+	.text_box{
+		width: 100%;
+	}
+	.appraisal_list{
+		font-size: .8rem;
+		margin-bottom: 2rem;
+		padding: 2rem 0;
+		border: 1px solid #93732b;
+		border-top: 0;
+	}
+	.left_box{
+		margin-bottom: .6rem;
+	}
+	.pic_box{
+		width: 20%;
+	}
+	.order_num, .p_name, .p_num, .p_color_size{
+		width: 76%;
+	}
+	.p_name{
+		padding-top: 0;
+		font-size: .9rem;
+	}
+	.p_nmu{
+		padding: .5rem 0;
+	}
+	.p_color_size, .time p{
+		color: #959595;
+	}
+	.time p{
+		display: inline-block;
+		padding-left: .5rem;
+	}
+	.order_num{
+		position: absolute;
+		width: 94%;
+		left: 50%;
+		margin-left: -48%;
+		padding-left: 2%;
+		line-height: 1.5rem;
+		margin-top: -2.5rem;
+		color: #fff;
+		background: #93732b;
+	}
+	.time{
+		position: absolute;
+		width: 100%;
+		margin-top: 2rem;
+		text-align: right;
+		right: 7%;
+	}
+	.appraisal_infs div.loading {
+	    display: block;
+	    width: 100%;
+	    height: 3.2rem;
+	    background: url('images/loader.gif') center no-repeat;
+	    background-size: auto 1.2rem;
+	    margin-left: 0;
+	}
+}
+@media only screen and (width: 768px){
+	.time{
+		margin-top: 1.2rem;
+	}
+}

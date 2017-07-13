@@ -1,0 +1,132 @@
+.box {
+	position: relative;
+}
+.left_menu_list_box {
+	font-size: 1rem;
+	font-weight: bold;
+	width: 20%;
+	float: left;
+	padding-bottom: 2rem;
+}
+
+.content {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+.main>.content {
+	margin-bottom: 10rem;
+}
+.footer {
+	margin-top: 0;
+}
+.mu_memu {
+	padding-left: .7rem;
+	margin-bottom: 1rem;
+	margin-top: -2px;
+}
+.mu_memu.active {
+	border-left: 1px solid #93732b;
+}
+.mu_memu>a {
+	font-size: .9rem;
+}
+
+.mu_memu.active:before {
+	position: relative;
+	left: -6px;
+	content: '';
+	vertical-align: middle;
+	display: inline-block;
+	margin-left: -7px;
+	width: .32rem;
+	height: 1.3rem;
+	background: #93732b;
+	margin-top: -4px;
+}
+
+.question_text {
+	position: absolute;
+	left: 12rem;
+    top: 0;
+    width: 76%;
+    font-size: .8rem;
+    font-weight: normal;
+	display: none;
+}
+.hidden {
+	visibility: hidden;
+	width: 76%;
+	display: none;
+	font-size: .8rem;
+	float: right;
+}
+
+@media only screen and (max-width: 768px) {
+	.main>.content {
+		margin-bottom: 0;
+	}
+	.hidden {
+		display: none;
+	}
+	.content {
+		padding: 0;
+	}
+	h2.title {
+		letter-spacing: 0;
+	}
+	.box {
+		margin-top: 2rem;
+	}
+	.left_menu_list_box {
+		float: none;
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	.mu_memu {
+		padding-left: 0;
+	}
+	.mu_memu.active:before {
+		display: none;
+	}
+	.mu_memu>a {
+		font-size: 1rem;
+		font-weight: normal;
+	}
+	.question_text {
+		position: static;
+		text-align: left;
+		width: 100%;
+	}
+
+	.question_text {
+		padding-top: 0;
+	}
+
+	.mu_memu.active {
+		border: none;
+	}
+	.mu_memu>a {
+		margin-left: .6rem;
+	}
+	.mu_memu>a:after {
+		content: '';
+		vertical-align: middle;
+		position: static;
+		display: inline-block;
+		width: .5rem;
+		height: 1rem;
+		background: url('images/light_arrow_down.png') center no-repeat;
+		background-size: 100% auto;
+		margin-left: .6rem;
+	}
+	.mu_memu.active>a:after {
+		background-image: url('images/light_arrow_up.png');
+	}
+
+	.answer_infs {
+		margin-top: .45rem;
+		margin-bottom: 2rem;
+	}
+}

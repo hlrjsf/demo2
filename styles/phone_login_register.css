@@ -1,0 +1,66 @@
+.content {
+	padding: 0 1rem;
+	margin-top: 3.2rem;
+}
+.left_main_nav_list .content {
+	margin-top: 0;
+}
+.line_box {
+	position: relative;
+	text-align: center;
+}
+
+.line_box .title {
+	display: inline-block;
+	padding: 0 1rem;
+	background: #fff;
+	color: #93732b;
+}
+.m_line {
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+    -ms-transform: translateY(-50%);    
+    -moz-transform: translateY(-50%);   
+    -webkit-transform: translateY(-50%); 
+    -o-transform: translateY(-50%);
+    border-bottom: 1px solid #93732b;
+}
+.zhifubao_icon {
+	margin: 0 3rem;
+}
+.m_input_box {
+	text-align: center;
+	border-bottom: 1px solid #93732b;
+	height: 3rem;
+	line-height: 3rem;
+}
+.m_input_box input {
+	text-align: center;
+	border: none;
+	outline: none;
+	vertical-align: bottom;
+	margin-bottom: .3rem;
+}
+.m_identifying_code_box {
+	position: relative;
+	text-align: center;
+	height: 2rem;
+	line-height: 2rem;
+	margin-top: 1rem;
+}
+
+.refresh {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateY(-50%);
+    -ms-transform: translateY(-50%);    
+    -moz-transform: translateY(-50%);   
+    -webkit-transform: translateY(-50%); 
+    -o-transform: translateY(-50%);
+	margin-left: 2.4rem;
+}

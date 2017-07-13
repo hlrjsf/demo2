@@ -1,0 +1,263 @@
+body{
+	font-size: .8rem;
+	background: #fff;
+}
+h3 {
+	font-size: .9rem;
+	font-weight: bold;
+}
+a{
+	cursor: pointer;
+}
+.content{
+	padding: 0 2rem;
+}
+.right_content h3{
+	padding-bottom: .5rem;
+}
+/*tabList*/
+.tab{
+	border-bottom: 1px solid #93732b;
+}
+.tab_list{
+	display: inline-block;
+}
+.tab_list a{
+	display: inline-block;
+	margin-right: 1.5rem;
+}
+.tab_list a.on{
+	color: #93732b;
+	border-bottom: 2px solid #93732b;
+}
+.tab_content ul li{
+	display: none;
+}
+.tab_content li.on{
+	display: block;
+}
+/*-------------------------------------------------*/
+/*优惠卷*/
+.inf_title{
+	margin-top: 1.5rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	font-size: 0;
+	color: #fff;
+	background: #93732b;
+}
+.inf_title div, .coupon_list div{
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+}
+.coupon_name, .period_of_use, .coupon_from, .right_box{
+	width: 26%;
+}
+.user_rules, .text_box{
+	width: 46%;
+}
+.coupon_infs img{
+	width: 100%;
+	display: block;
+}
+.coupon_list{
+	padding: 1.5rem 0;
+	border-bottom: 1px solid #93732b;
+}
+.con_text .coupon_pic img{
+	width: 4rem;
+	height: 4rem;
+	margin-right: .7rem;
+}
+.expired_coupon{
+	color: #9f9f9f;
+}
+.expired_coupon .coupon_pic img{
+	width: 4rem;
+	height: 4rem;
+	margin-right: .7rem;
+}
+div.center_box{
+	width: 90%;
+}
+div.coupon_from{
+	text-align: left;
+	font-size: .9rem;
+}
+div.txt_infs{
+	position: relative;
+	width: 72%;
+	margin: 0 auto;
+	text-align: left;
+	line-height: 1.2rem;
+}
+div.txt_inf{
+	text-align: left;
+}
+ div.txt_inf span{
+ 	float: left;
+ 	padding-right: .5rem;
+ }
+ div.txt_inf p{
+ 	line-height: 1.2rem;
+ 	margin-bottom: 1rem;
+ }
+.check_more{
+	float: right;
+	cursor: pointer;
+}
+.check_more.active{
+	color: #93732b;
+}
+div.mask{
+	width: 12rem;
+	position: absolute;
+	display: none;
+	padding: 1rem;
+    top: -.7rem;
+    right: -15rem;
+    border: 1px solid #93732b;
+    background: #fff;
+    z-index: 105;
+}
+div.mask:before{
+	content: '';
+    position: absolute;
+    width: 10px;
+    height: 15px;
+    background: url(./images/left_arrow.png) center no-repeat #fff;
+    background-size: 1rem auto;
+    left: -10px;
+    top: 2rem;
+}
+.note{
+	position: absolute;
+	right: 1rem;
+	bottom: 1rem;
+	color: #9f9f9f;
+}
+.loading{
+	display: none;
+}
+.delect_bnt{
+	display: none;
+	cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+	.right_content>h3, .pages_num, .inf_title{
+		display: none;
+	}
+	.content{
+		padding: 0;
+	}
+	.tab{
+		overflow: hidden;
+		margin-top: .8rem;
+	}
+	.tab_list, .tab_list a{
+		display: block;
+	}
+	.tab_list a{
+		float: left;
+		width: 25%;
+		margin-right: 0;
+		text-align: center;
+	}
+	div.center_box{
+		width: 72%;
+		text-align: left;
+		font-size: .75rem;
+	}
+	div.txt_infs, .right_box{
+		color: #9f9f9f;
+	}
+	div.txt_infs span:first-child{
+		display: block;
+		float: left;
+		max-width: 70%;
+	}
+	.check_more{
+		position: absolute;
+		right: 0;
+	}
+	div.coupon_from{
+		padding: .1rem 0 .5rem 0;
+		color: #000;
+	}
+	.expired_coupon div, .expired_coupon div.txt_infs{
+		color: #9f9f9f;
+	}
+	div.coupon_from, div.text_box, div.right_box{
+		width: 100%;
+		text-align: left;
+	}
+	.text_box div{
+		width: 100%;
+	}
+	div.mask{
+		position: fixed;
+		width: 85%;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+    	background: #fff;
+	}
+	div.mask:before{
+		display: none;
+	}
+	.right_box:before{
+		display: inline-block;
+		content: '有效期';
+		color: #9f9f9f;
+	}
+	.pup_box{
+		display: none;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		background: #000;
+    	opacity: .5;
+		z-index: 104; 
+	}
+	div.txt_inf{
+		margin: 0 auto;
+		padding: 2rem 0;
+		text-align: left;
+		color: #000;
+	}
+	div.note{
+		text-align: right;
+		right: 8%;
+		bottom: 1.5rem;
+	}
+	div.delect_bnt{
+		position: absolute;
+		top: .5rem;
+		right: .5rem;
+		display: block;
+		width: 22px;
+		height: 22px;
+		background: url('images/delect_pic.png') center no-repeat;
+		background-size: 15px auto;
+	}
+	.loading {
+	    display: block;
+	    width: 100%;
+	    height: 3.2rem;
+	    background: url('images/loader.gif') center no-repeat;
+	    background-size: auto 1.2rem;
+	    margin-left: 0;
+	}
+
+}
+@media only screen and (width: 768px){
+	div.center_box{
+		width: 80%;
+	}
+	.country_select, .language_select {
+		font-size: .9rem;
+	}
+}

@@ -1,0 +1,356 @@
+.car_table {
+	width: 100%;
+	font-size: .8rem;
+	text-align: center;
+}
+
+.car_table th {
+	background: #93732b;
+	color: #fff;
+	padding: .1rem 0;
+}
+.car_table th.first {
+	padding-left: 10px;
+}
+.bold {
+	font-weight: bold;
+	font-size: .85rem;
+}
+.car_table td {
+	vertical-align: middle;
+	border-bottom: 1px solid #93732b;
+	padding: 1rem 1rem;
+}
+
+.check_btn {
+	display: inline-block;
+	height: 1rem;
+	margin-right: 10px;
+	background: url('images/check_btn.png') center no-repeat;
+	
+}
+.phone_box .check_btn, td .check_btn {
+	width: 1rem;
+	background-size: 80% auto;
+	vertical-align: middle;
+}
+.single_price {
+	padding-left: .5rem;
+}
+th {
+	line-height: 1.5rem;
+	height: 1.5rem;
+	vertical-align: middle;
+}
+th .check_btn {
+	display: inline;
+	padding-left: 1.2rem;
+	background: url('images/check_btn.png') left center no-repeat;
+	background-size: auto .8rem;
+
+}
+
+.check_btn.check {
+	background-image: url('images/check_btn_active.png');
+}
+.img_link {
+	display: inline-block;
+	width: 10rem;
+	vertical-align: middle;
+}
+.good_info_box {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+.img_link img {
+	width: 100%;
+}
+
+.good_td {
+	text-align: left;
+}
+
+.color_code_box {
+	margin-top: 1rem;
+}
+
+.tab {
+	display: inline-block;
+	border: 1px solid #93732b;
+	font-size: .6rem;
+	padding: 0 5px;
+}
+.good_code {
+	color: #ccc;
+	font-size: .6rem;
+}
+
+.reduce, .add {
+	display: inline-block;
+	width: .8rem;
+	height: .8rem;
+	vertical-align: middle;
+	background: url('images/add.png') center no-repeat;
+	background-size: .8rem auto;
+	cursor: pointer;
+	padding: .5rem;
+}
+.all_handle_box {
+	font-size: .8rem;
+}
+.reduce {
+	background-image: url('images/reduce.png')
+}
+.count_input {
+	width: 3rem;
+	text-align: center;
+	outline: none;
+	border: 1px solid #ccc;
+}
+.collection_handle,
+.delete_handle {
+	display: block;
+	color: #ccc;
+	background: url('images/collection_link.png') left center no-repeat;
+	background-size: auto .7rem;
+	padding-left: 1rem;
+	text-align: left;
+	text-decoration: underline;
+}
+.delete_handle {
+	background-image: url('images/delete_handle.png');
+}
+.sum_box, .btn_box {
+	font-size: .8rem;
+	text-align: right;
+	padding-right: 2rem;
+}
+.sum_box {
+	overflow: hidden;
+	line-height: 1.5rem;
+	margin: 1rem 0;
+}
+
+.sum_box table {
+	float: right;
+}
+
+.sum_box table td {
+	min-width: 3rem;
+}
+
+.btn_box a {
+	display: inline-block;
+	min-width: 8rem;
+	line-height: 1.8rem;
+	text-align: center;
+	border: 1px solid #93732b;
+}
+.final_tr {
+	font-size: .9rem;
+	font-weight: bold;
+}
+.close_account {
+	background: #93732b;
+	color: #fff;
+}
+.phone_box {
+	display: none;
+}
+.collection_handle.active {
+	background-image: url('images/collection_active.png');
+}
+
+@media only screen and (max-width: 768px) {
+	.collection_handle.active {
+		background: none;
+	}
+	.pc_box {
+		display: none;
+	}
+	.phone_box {
+		display: block;
+	}
+	.item {
+		margin: 1rem auto;
+		position: relative;
+	}
+	.item .active_box {
+		background: #ddd;
+		padding: .3rem .5rem;
+		font-size: .8rem;
+	}
+	.active_box span {
+		color: #93732b;
+	}
+	.active_box a {
+		text-decoration: underline;
+		margin-left: 1rem;
+		font-size: .8rem;
+	}
+
+	.good_box {
+		display: table;
+		position: relative;
+		padding: 1rem 0;
+		border-bottom: 1px solid #93732b;
+	}
+
+	.good_box .check_btn_box,
+	.good_box .good_img_box,
+	.good_box .good_info_box {
+		display: table-cell;
+		vertical-align: middle;
+
+	}
+
+	.good_box .check_btn_box {
+		width: 6%;
+		text-align: center;
+	}
+
+	.good_box .good_img_box {
+		width: 26%;
+	}
+	.good_img_box img {
+		width: 100%;
+	}
+	.good_box .good_info_box {
+		position: relative;
+		height: 100%;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-left: 2%;
+	}
+	.good_box .good_info_box h2 {
+		position: absolute;
+		top: 0;
+		font-size: .95rem;
+	}
+	.good_box .price_count_box {
+		position: absolute;
+		bottom: 0;
+		font-size: .95rem;
+		right: 0;
+		left: 0;
+	}
+	.gray {
+		color: #ccc;
+		font-size: .8rem;
+	}
+	.info_box,
+	.total_box {
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+	.info_box div {
+		margin: .5rem 0;
+	}
+	.info_box .small,
+	.total_box .small {
+		font-size: .7rem;
+		line-height: .7rem;
+	}
+	.info_box {
+		border-bottom: 1px solid #93732b;
+	}
+	.total_box p {
+		font-size: 1rem;
+	}
+	.m_accounts,
+	.m_continue {
+		display: block;
+		text-align: center;
+		padding: .4rem 0;
+		border: 1px solid #93732b;
+		margin-bottom: 1rem;
+	}
+
+	.m_accounts {
+		background: #93732b;
+		color: #fff;
+	}
+
+	.m_accounts:after,
+	.m_continue:before {
+		content: '';
+		display: inline-block;
+		width: .4rem;
+		height: .4rem;
+		background: url('images/white_arrow_right.png') center no-repeat;
+		background-size: auto 100%;
+		vertical-align: middle;
+	}
+	.m_continue {
+		padding-right: 1rem;
+	}
+
+	.m_accounts:after {
+		margin-left: .5rem;
+	}
+
+	.m_continue:before {
+		background-image: url('images/light_arrow_left.png');
+		margin-right: .5rem;
+	}
+
+	.edit_box {
+		width: 66%;
+		position: absolute;
+		right: -5000px;
+		top: 1rem;
+		background: #fff;
+		bottom: 1rem;
+		transition: right .32s;
+		-moz-transition: right .32s;
+		-webkit-transition: right .32s;
+		-o-transition: right .32s;
+	}
+	.edit_box.show {
+		right: 0;
+	}
+	.edit_count, 
+	.handle_box {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.edit_box .edit_count {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);    
+	    -moz-transform: translateY(-50%);   
+	    -webkit-transform: translateY(-50%); 
+	    -o-transform: translateY(-50%);
+	    width: 60%;
+	    text-align: center;
+	}
+	.edit_box .handle_box {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 40%;
+		border-left: 1px solid #93732b;
+	}
+	.collection_handle, .delete_handle {
+		background: none;
+		position: absolute;
+		text-decoration: none;
+		left: 50%;
+		padding: 0;
+		transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);    
+	    -moz-transform: translateX(-50%);   
+	    -webkit-transform: translateX(-50%); 
+	    -o-transform: translateX(-50%);
+	}
+	.collection_handle {
+		top: 1rem;
+	}
+	.delete_handle {
+		bottom: 1rem;
+	}
+}

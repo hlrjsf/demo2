@@ -1,0 +1,69 @@
+.left_main_nav_list .content {
+	margin-top: 0;
+	padding-left: 0;
+}
+.m_input_box {
+	text-align: left;
+}
+
+.m_input_box input {
+	text-align: left;
+	width: 100%;
+	font-size: .8rem;
+}
+.m_input_box_s {
+	border: none;
+}
+.m_input_box_s input {
+	width: 56%;
+	border-bottom: 1px solid #93732b;
+	vertical-align: bottom;
+	margin-bottom: 0;
+}
+.btn_box {
+	display: inline-block;
+	position: relative;
+	width: 38%;
+	text-align: center;
+	margin-left: 4%;
+	vertical-align: bottom;
+}
+
+.resend_tip {
+	text-align: center;
+	width: 100%;
+	line-height: 1;
+	position: absolute;
+	left: 50%;
+	top: 110%;
+	transform: translateX(-50%);
+    -ms-transform: translateX(-50%);    
+    -moz-transform: translateX(-50%);   
+    -webkit-transform: translateX(-50%); 
+    -o-transform: translateX(-50%);
+    color: #ccc;
+    display: none;
+}
+
+.btn {
+	border: none;
+	outline: none;
+	background: #93732b;
+	color: #fff;
+	padding: .7rem 1.5rem;
+}
+
+.m_send_verification_code {
+	display: block;
+	width: 100%;
+	padding: .7rem 0;
+}
+.m_send_verification_code.disable {
+	background: #ccc;
+}
+
+.m_register {
+	display: block;
+	width: 100%;
+	margin: 2rem auto;
+}

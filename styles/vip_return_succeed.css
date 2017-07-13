@@ -1,0 +1,169 @@
+.gray {
+	color: #aaa;
+}
+.content {
+    font-size: .8rem;
+    padding: 0px 2rem;
+}
+.return_box {
+    width: 85%;
+    float: left;
+}
+
+.return_cont {
+    margin-bottom: 1.5rem;
+}
+.f_w {
+    font-weight: bold;
+}
+.order_box {
+	position: relative;
+	border: 1px solid #93732b;
+	border-top: 1.5rem solid #93732b;
+	overflow: hidden;
+}
+.good_box {
+	border-right: 1px solid #93732b;
+	padding: 1rem;
+	overflow: hidden;
+	display: inline-block;
+	float: left;
+	padding-right: 2rem;
+}
+
+.good_box img {
+	width: 13rem;
+	float: left;
+}
+
+.good_info {
+	float: left;
+	padding-left: 2rem;
+	max-width: 15rem;
+}
+.good_info h3 {
+	font-size: 1rem;
+}
+.good_info p {
+	font-size: .7rem;
+	margin-bottom: .5rem;
+}
+
+.return_info {
+	position: absolute;
+	bottom: 2rem;
+	left: 16rem;
+}
+
+.return_status_box {
+	display: inline-block;
+	margin-top: 2rem;
+	margin-left: 2rem;
+}
+
+.return_status_box .tip {
+	font-size: .7rem;
+}
+
+.return_status_text {
+	font-size: 1.2rem;
+}
+.status {
+	color: #93732b;
+}
+.question {
+	position: absolute;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	text-align: right;
+	padding-right: 1rem;
+	background: url('./images/size_help.png') right center no-repeat;
+	background-size: .7rem auto;
+}
+
+.logistical_box {
+    display: block;
+    margin-top: 4rem;
+    margin-left: 2rem;
+}
+
+.check_btn {
+	display: inline-block;
+	color: #fff;
+	background: #93732b;
+	padding: .3rem .5rem;
+}
+.box {
+	display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+	.content {
+		padding: 0;
+	}
+	.media_hidden {
+		display: none;
+	}
+	.return_box {
+		width: 100%;
+	}
+	.order_box {
+		border: none;
+	}
+	.box {
+		display: block;
+	}
+	.return_status_box {
+		display: block;
+		margin: 0;
+		background: #FBF7F4;
+		padding: 1rem;
+	}
+	.logistical_box {
+		margin-left: 0;
+		background: #FBF7F4;
+		padding: .5rem;
+		margin: 1rem auto;
+	}
+	.check_btn {
+		float: right;
+		margin-top: -.5rem;
+	}
+	.good_box {
+		border: 1px solid #93732b;
+		padding: 1rem;
+	}
+	.short_letter {
+		letter-spacing: 0;
+	}
+	.good_box img {
+		width: 22%;
+	}
+	.good_info {
+		width: 70%;
+		padding-left: 6%;
+	}
+	.return_info {
+		position: static;
+		padding-left: 1rem;
+	}
+	.question {
+		position: static;
+		background: url('./images/size_help.png') 96% center no-repeat #FBF7F4;
+		background-size: .8rem auto;
+		display: block;
+		height: 2rem;
+		line-height: 2rem;
+		padding-right: 2rem;
+	}
+	.good_box {
+		width: 100%;
+		box-sizing: border-box;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	.good_box {
+		padding: .5rem;
+	}
+}

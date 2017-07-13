@@ -1,0 +1,23 @@
+.upgrade_prompt div{
+	margin-bottom: 20px;
+	text-align: center;
+}
+.upgrade_prompt div:last-child{
+	margin-bottom: 60px;
+}
+.browser_list{
+	width: 24.5%;
+	display: inline-block;
+	text-align: center;
+}
+.browser_name{
+	margin-bottom: 3px;
+	font-size: 20px;
+}
+.browser_download{
+	margin-top: 25px;
+}
+.browser_download a{
+	padding: 13px 80px;
+	border: 2px solid #94732b;
+}

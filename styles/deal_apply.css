@@ -1,0 +1,147 @@
+.media_show{
+	display:none;
+}
+.content{
+	font-size:.8rem;
+	padding:0px 2rem;
+}
+.deal_box{
+	width:85%;
+	float:left;
+}
+.deal_cont{
+	margin-bottom:1.5rem;
+}
+.deal_tit{
+	font-size:.9rem;
+}
+.deal_goods ul{
+	width:100%;
+	position:relative;
+	border:1px solid #93732b;
+	border-top:0px;
+}
+.deal_goods li{
+	-moz-box-sizing: border-box;  
+	 -webkit-box-sizing: border-box; 
+	 -o-box-sizing: border-box; 
+	 -ms-box-sizing: border-box; 
+	 box-sizing: border-box;
+}
+.deal_goods .lists_th{
+	background:#93732b;
+	height:1.5rem;
+}
+.deal_goods .return_state{
+	padding-left:2rem;
+	width:40%;
+	position:absolute;
+	right:0px;
+	top:3.5rem;
+}
+.deal_goods .good{
+	display:table;
+	padding:1.5rem;
+	padding-right:0px;
+	border-right:1px solid #93732b;
+	width:60%;
+}
+.deal_goods .good_img{
+	display:table-cell;
+	vertical-align: top;
+	width:11rem;
+}
+.deal_goods .good_img img{
+	width:100%;
+}
+.deal_goods .goods_txt{
+	display:table-cell;
+	vertical-align: top;
+	margin-top:1rem;
+	padding-left:1.3rem;
+}
+.deal_goods .return_txt{
+	position:absolute;
+	padding-left:1.3rem;
+	left:12.5rem;
+	bottom:1.5rem;
+}
+
+
+.return_state h1{
+	float:left;
+	font-size:1.4rem;
+}
+.return_help{
+	text-align: right;
+	position:absolute;
+	bottom:2rem;
+	right:2rem;
+}
+.return_help_btn{
+	display:inline-block;
+	padding-right:1rem;
+	background:url("images/questionmark.png") no-repeat right center;
+	background-size:auto 80% ;
+}
+
+@media only screen and (max-width: 768px) {
+	.media_hidden{
+		display:none;
+	}
+	.media_show{
+		display:block;
+	}
+	.content{
+		padding:0px;
+	}
+	.left_menu_list_box{
+		display:none;
+	}
+	.deal_box{
+		width:100%;
+	}
+	.deal_cont{
+		margin-bottom:.7rem;
+	}
+	.deal_goods ul{
+		border:0px;
+	}
+	.deal_goods li{
+		margin-bottom:1rem;
+	}
+	.deal_goods .good{
+		width:100%;
+		border:1px solid #93732b;
+		padding:.5rem;
+	}
+	.deal_goods .good_img{
+		width:6rem;
+	}
+	.deal_goods .goods_txt{
+		padding-left:5%;
+	}
+	.deal_goods .goods_txt p{
+		padding:.2rem 0px;
+	}
+	.deal_goods .return_state{
+		width:100%;
+		position:static;
+		padding:.7rem;
+		background:#FAF8F4;
+	}
+	.return_state h1{
+		font-size:1.2rem;
+	}
+	.deal_goods .return_txt{
+		width:100%;
+		position:static;
+		padding:.7rem;
+	}
+	.deal_goods .return_help{
+		width:100%;
+		position:static;
+		padding:.7rem;
+		background:#FAF8F4;
+	}
+}

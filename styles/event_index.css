@@ -1,0 +1,77 @@
+.events_box {
+	width: 94%;
+	margin: 0 auto;
+	font-size: .9rem;
+}
+.event_item {
+	overflow: hidden;
+}
+.event_item img {
+	width: 100%;
+}
+
+.left_item, .right_item {
+	width: 48%;
+	cursor: pointer;
+}
+
+.left_item {
+	float: left;
+}
+
+.right_item {
+	float: right;
+}
+
+.event_item {
+	margin-bottom: 2rem;
+}
+
+.event_title {
+	display: inline-block;
+	background: url('images/light_arrow_right.png') left center no-repeat;
+	background-size: auto .6rem;
+	padding-left: 1rem;
+}
+
+.load_box {
+	margin-top: 5rem;
+	text-align: center;
+}
+
+.load_more {
+	display: inline-block;
+	padding-right: 1rem;
+	background: url('images/arrow_down.png') right center no-repeat;
+	background-size: 1rem auto;
+	cursor: pointer;
+}
+
+.load_icon {
+	display: none;
+	height: 1.5rem;
+	width: 1.5rem;
+	background: url('images/loader.gif') center no-repeat;
+	background-size: 100% auto;
+}
+.load_icon.show {
+	display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+	.left_item,
+	.right_item {
+		float: none;
+		width: 100%;
+		margin-bottom: 1rem;
+	}
+	.events_box {
+		width: 100%;
+	}
+	.event_item {
+		margin-bottom: 0;
+	}
+	.load_box {
+		margin-top: 2rem;
+	}
+}

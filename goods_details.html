@@ -1,0 +1,2125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Cache-Control" content="max-age=3600" />
+	<meta http-equiv="Cache-Control" content="no-transform"/>
+	<meta name="MobileOptimized" content="240" />
+	<meta name="apple-touch-fullscreen" content="YES" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/function.js"></script>
+	<script src="js/header.js"></script>
+	<!-- <script src="js/set_rem.js"></script> -->
+	<!-- <script src="js/left_menu.js"></script> -->
+	<link href="styles/cn.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="styles/scrollbar.css">
+	<title>商品详情</title>
+</head>
+<body>
+<script> 
+	if (/*@cc_on!@*/false) { 
+		document.documentElement.className+=' ie10'; 
+	} 
+</script>
+
+<!--[if (IE) & (lt IE 10)]>  
+	<script>
+		$(function(){
+			if(!window.location.href.match('browser_version.php')) {
+				window.location.href="browser_version.php";
+			}
+		});
+	</script>
+<![endif]-->
+
+<div class="customer_service">在线客服</div>
+<div class="to_top" id="toTop"></div>
+<div class="main">
+	<div class="header">
+		<link href="styles/login.css" rel="stylesheet" type="text/css" />
+<div class="login_hover">
+	<div class="login_window">
+		<h2 class="title">登录</h2>
+		<span class="closed_btn" id="loginClosedBtn"></span>
+		<div class="table">
+			<div class="td input_box">
+				<div class="user_name">
+					<input type="text" placeholder="输入账户名/电话号码">
+				</div>
+				<div class="password">
+					<input type="password" placeholder="输入密码">
+				</div>
+				<div class="identifying_code">
+					<input type="text" placeholder="输入验证码">
+					<div class="identifying_code_box">
+						<img src="styles/images/identifying_code_pic.jpg" alt="identifying_code_pic" class="identifying_code_pic">
+						<a href="javascript:void(0)" class="refresh"></a>
+					</div>
+				</div>
+				<div class="login_handle_box">
+					<div class="login_status_box">
+						<label class="login_status"><input type="checkbox">记住密码</label>
+					</div>
+					<a href="javascript:void(0)" class="login">登录</a>
+				</div>
+				<a href="javascript:void(0)" class="forget_pwd">忘记密码</a>
+			</div>
+			<div class="td other_login_box">
+				<h3 class="title">通过以下账户登录</h3>
+				<a href="javascript:void(0)" class="qq_icon"></a>
+				<a href="javascript:void(0)" class="zhifubao_icon"></a>
+				<a href="javascript:void(0)" class="wechat_icon"></a>
+			</div>
+			<div class="register_link_box">未有账号？<a href="javascript:void(0)" class="register_link">注册</a></div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function() {
+		var $loginHover = $('.login_hover');
+		$('#loginClosedBtn').click(function() {
+			$loginHover.hide();
+		});
+
+		$('#login').click(function() {
+			$loginHover.show();
+		});
+	})
+</script>		<link href="styles/register.css" rel="stylesheet" type="text/css" />
+<div class="register_hover">
+	<div class="register_window">
+		<h2 class="title">以会员方式进行注册</h2>
+		<span class="closed_btn" id="closedRegisterBtn"></span>
+		<div class="table">
+			<div class="td input_box">
+				<div class="user_name">
+					<input type="text" placeholder="账号名       6-18个字符">
+				</div>
+				<div class="password">
+					<input type="password" placeholder="请设置密码 6-18位 数字、字母、字符至少包含两种">
+				</div>
+				<div class="confirm_password">
+					<input type="password" placeholder="请确认密码">
+				</div>
+				<div class="phone_number">
+					<input type="text" placeholder="手机号码">
+					<button class="send btn">发送验证码</button>
+				</div>
+				<div class="confirm_password_identify">
+					<input type="text" placeholder="手机验证码">
+					<button class="register btn">注册</button>
+				</div>
+				<div class="register_tip">点击"注册"，您即被视作同意《<a href="javascript:void(0)">UR商城用户注册协议</a>》</div>
+
+			</div>
+			<div class="td other_register_box">
+				<h3 class="title">通过以下账户登录</h3>
+				<a href="javascript:void(0)" class="qq_icon"></a>
+				<a href="javascript:void(0)" class="zhifubao_icon"></a>
+				<a href="javascript:void(0)" class="wechat_icon"></a>
+			</div>
+			<div class="login_link_box">已有账号？<a href="javascript:void(0)" class="login_link">登录</a></div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function() {
+		var $registerHover = $('.register_hover');
+		$('#closedRegisterBtn').click(function() {
+			$registerHover.hide();
+		});
+
+		$('#register').click(function() {
+			$registerHover.show();
+		});
+
+		var $sendVerificationCode = $('.send');
+
+		$sendVerificationCode.click(function() {
+			if(!$sendVerificationCode.hasClass('disable')) {
+				handle($sendVerificationCode, function() {
+					$sendVerificationCode.removeClass('disable');
+					$sendVerificationCode.html('发送验证码');
+				}, 60);
+				$sendVerificationCode.addClass('disable');
+			}
+		});
+	})
+</script>		<link href="styles/forget_pwd.css" rel="stylesheet" type="text/css" />
+<div class="forget_hover">
+	<div class="forget_window">
+		<h2 class="title">重置密码</h2>
+		<span class="closed_btn" id="forgetPwdClosedBtn"></span>
+		<p>您可以通过手机找回密码，稍后我们将发送一条短信帮助您找回密码</p>
+		<div class="input_box">
+			<input type="text" placeholder="输入您的手机号码">
+			<div class="btn_box">
+				<button class="btn send_verification_code">发送验证码</button>
+				<span class="resend_tip">59秒后重发</span>
+			</div>
+		</div>
+		<div class="input_box">
+			<input type="text" placeholder="输入验证码">
+		</div>
+		<div class="input_box">
+			<input type="password" placeholder="输入新密码">
+		</div>
+		<div class="input_box">
+			<input type="password" placeholder="再次输入新密码">
+			<button class="btn">确认新密码</button>
+		</div>
+		<span class="pwd_tip">密码长度8-16位，数字，字母，字符至少包含两种</span>
+	</div>
+</div>
+
+<script>
+	$(function() {
+		var $forgetHover = $('.forget_hover');
+		$('#forgetPwdClosedBtn').click(function() {
+			$forgetHover.hide();
+			$('.login_hover').show();
+		});
+
+		var clientWidth = $(window).width();
+
+		if(clientWidth > 768) {
+			$('.forget_pwd').click(function() {
+				$('.login_hover').hide();
+				$forgetHover.show();
+			});
+		}
+
+		var $sendVerificationCode = $('.send_verification_code');
+
+		$sendVerificationCode.click(function() {
+			if(!$sendVerificationCode.hasClass('disable')) {
+				handle($sendVerificationCode, function() {
+					$sendVerificationCode.removeClass('disable');
+					$sendVerificationCode.html('发送验证码');
+				}, 60);
+				$sendVerificationCode.addClass('disable');
+			}
+		});
+		
+	})
+</script>		<div class="mobile_lang">
+			<span id="mobileLang">English</span>
+		</div>
+		<div class="login_box ofh">
+			<div class="fl">
+				<a href="javascript:void(0)" class="store_icon">店铺</a>
+				|
+				<a href="javascript:void(0)">关于UR</a>
+			</div>
+			<div class="fr">
+				<span class="lang"><a href="javascript:void(0)" id="lang">English</a>
+				|
+				<a href="javascript:void(0)" class="user_icon" id="login">登录</a>
+				|
+				<a href="javascript:void(0)" id="register">注册</a>
+				|
+				<a href="javascript:void(0)" class="collection_icon"></a>
+				|
+				<a href="javascript:void(0)" class="package_icon"></a>
+				
+			</div>
+		</div>
+		<div class="brand_box">
+			<a href="#" class="brand_name">
+				<img src="styles/images/brand_name.png" alt="URBAN REVIVO">
+			</a>
+			<a href="" class="logo fr">
+				<img src="styles/images/logo.gif" alt="UR">
+			</a>
+		</div>
+		<div class="main_nav">
+			<span class="more" id="more"></span>
+			<ul class="nav_list">
+				<li>
+					<a href="#">本周新品</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">女士</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">少女</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">男士</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">儿童</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">配饰</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">活动</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#">品牌资讯</a>
+					<div class="main_sub_nav_hover">
+						<div class="main_sub_nav_box">
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav02.jpg" alt="main_sub_nav01">
+									<p>热销商品</p>
+								</a>
+							</div>
+							<div class="item item_img">
+								<a href="javascript:void(0)">
+									<img src="styles/images/main_sub_nav01.jpg" alt="main_sub_nav02">
+									<p>“美”就你</p>
+								</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">新品</a>
+								<a href="javascript:void(0)">10月新品</a>
+								<a href="javascript:void(0)">9月新品</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">连衣裙</a>
+								<a href="javascript:void(0)">T恤/衬衫</a>
+								<a href="javascript:void(0)">夹克/风衣</a>
+								<a href="javascript:void(0)">毛呢外套</a>
+								<a href="javascript:void(0)">羽绒服</a>
+								<a href="javascript:void(0)">棉服</a>
+								<a href="javascript:void(0)">针织衫</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">裤装</a>
+								<a href="javascript:void(0)">半身裙</a>
+								<a href="javascript:void(0)">短裙</a>
+								<a href="javascript:void(0)">下装</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">魅力风格</a>
+								<a href="javascript:void(0)">假日风格</a>
+								<a href="javascript:void(0)">晚装风格</a>
+								<a href="javascript:void(0)">休闲风格</a>
+								<a href="javascript:void(0)">优雅风格</a>
+								<a href="javascript:void(0)">基本百搭</a>
+							</div>
+							<div class="item">
+								<a href="javascript:void(0)">冬日出游</a>
+								<a href="javascript:void(0)">悦动心意</a>
+								<a href="javascript:void(0)" class="active">针织“芯”意</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="left_main_nav_out_box" id="leftMainNavOutBox">
+				<div class="left_main_nav_box" id="leftMainNavBox">
+					<span class="hide_nav" id="hideNav"></span>
+					<div class="ofh home_login_box">
+						<a href="javascript:void(0)" class="fl">首页</a>
+						<a href="javascript:void(0)" class="fr">登录/注册</a>
+					</div>
+					<div id="navList" class="left_main_nav_list">
+			        	<div class="content">
+	<ul>
+		<li class="item">
+			<a href="javascript:void(0)">WOMEN1</a><i class="arr_icon"></i>
+			<ul class="sub_list">
+				<li><a href="javascript:void(0)" class="active_link">热销商品</a></li>
+				<li><a href="javascript:void(0)" class="active_link">"美"就你</a></li>
+				<li><a href="javascript:void(0)">新品</a></li>
+				<li><a href="javascript:void(0)">10月新品</a></li>
+				<li><a href="javascript:void(0)">9月新品</a></li>
+				<li><a href="javascript:void(0)">连衣裙</a></li>
+				<li><a href="javascript:void(0)">T恤/衬衫</a></li>
+				<li><a href="javascript:void(0)">夹克/风衣</a></li>
+				<li><a href="javascript:void(0)">毛呢外套</a></li>
+				<li><a href="javascript:void(0)">羽绒服</a></li>
+				<li><a href="javascript:void(0)">棉服</a></li>
+				<li><a href="javascript:void(0)">针织衫</a></li>
+				<li><a href="javascript:void(0)">裤装</a></li>
+				<li><a href="javascript:void(0)">半身裙</a></li>
+				<li><a href="javascript:void(0)">短裙</a></li>
+				<li><a href="javascript:void(0)">下装</a></li>
+				<li><a href="javascript:void(0)">魅力风格</a></li>
+				<li><a href="javascript:void(0)">假日风格</a></li>
+				<li><a href="javascript:void(0)">晚装风格</a></li>
+				<li><a href="javascript:void(0)">休闲风格</a></li>
+				<li><a href="javascript:void(0)">优雅风格</a></li>
+				<li><a href="javascript:void(0)">基本百搭</a></li>
+				<li><a href="javascript:void(0)">冬日出游</a></li>
+				<li><a href="javascript:void(0)">悦动心意</a></li>
+				<li><a href="javascript:void(0)" class="active">针织“芯”意</a></li>
+			</ul>
+		</li>
+		<li class="item">
+			<a href="javascript:void(0)">WOMEN2</a><i class="arr_icon"></i>
+			<ul class="sub_list">
+				<li><a href="javascript:void(0)">连衣裙</a></li>
+				<li><a href="javascript:void(0)">T恤</a></li>
+				<li><a href="javascript:void(0)">衬衫</a></li>
+				<li><a href="javascript:void(0)">夹克/风衣</a></li>
+			</ul>
+		</li>
+		<li class="item">
+			<a href="javascript:void(0)">WOMEN3</a><i class="arr_icon"></i>
+			<ul class="sub_list">
+				<li><a href="javascript:void(0)">连衣裙</a></li>
+				<li><a href="javascript:void(0)">T恤</a></li>
+				<li><a href="javascript:void(0)">衬衫</a></li>
+				<li><a href="javascript:void(0)">夹克/风衣</a></li>
+			</ul>
+		</li>
+		<li class="item">
+			<a href="javascript:void(0)">WOMEN4</a><i class="arr_icon"></i>
+			<ul class="sub_list">
+				<li><a href="javascript:void(0)">连衣裙</a></li>
+				<li><a href="javascript:void(0)">T恤</a></li>
+				<li><a href="javascript:void(0)">衬衫</a></li>
+				<li><a href="javascript:void(0)">夹克/风衣</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>			        </div>
+			        <div class="collection_store_box ofh">
+			        	<a href="javascript:void(0)" class="fl collection_icon">心愿单</a>
+			        	<a href="javascript:void(0)" class="fr store_icon">店铺</a>
+			        </div>
+				</div>
+			</div>
+			<div class="fr search_outer_box">
+				<div class="search_box" id="mainSearchBox">
+					<input type="text" placeholder="输入搜索词..." class="search_input" id="searchInput">
+					<span class="search_clear" id="searchClear"></span>
+					<span class="search_click">搜索</span>
+				</div>
+				<span class="show_search" id="showSearchBtn"></span>
+				
+			</div>
+			<span class="package"></span>
+		</div>
+	</div>
+<link rel="stylesheet" href="styles/swiper.css">
+<link href="styles/goods_details.css" rel="stylesheet" type="text/css" />
+
+<div class="content">
+	<div class="goods_infs">
+		<div class="left_main">
+			<div class="left_contens">
+				<div class="flash" id="flash">
+					<ul class="pic" id="pic">
+						<li class="pic_list on">
+							<img src="styles/images/goods_detail_pic_01.jpg">
+							<img src="styles/images/goods_detail_pic_02.jpg">
+							<img src="styles/images/goods_detail_pic_02.jpg">
+							<img src="styles/images/goods_detail_pic_01.jpg">
+							<img src="styles/images/goods_detail_pic_02.jpg">
+						</li>
+						<li class="pic_list">
+							<img src="styles/images/goods_detail_pic_02.jpg">
+							<img src="styles/images/goods_detail_pic_02.jpg">
+							<img src="styles/images/goods_detail_pic_01.jpg">
+							<img src="styles/images/goods_detail_pic_01.jpg">
+							<img src="styles/images/goods_detail_pic_02.jpg">
+						</li>
+						<li class="pic_list">
+							<img src="styles/images/goods_detail_pic_01.jpg">
+							<img src="styles/images/goods_detail_pic_02.jpg">
+							<img src="styles/images/goods_detail_pic_02.jpg">
+							<img src="styles/images/goods_detail_pic_02.jpg">
+							<img src="styles/images/goods_detail_pic_01.jpg">
+						</li>	
+					</ul> 
+					<div href="javascript:;" class="arrow" id="arrow_up"></div>
+					<div href="javascript:;" class="arrow" id="arrow_down"></div>
+				</div>
+			</div>
+		</div>
+		<div class="center_goods_pic" id="goodsPic">
+			<div class="goods_pic">
+				<img src="styles/images/flash.jpg">
+				<div class="hide_hover" id="hideHover"></div>
+				<span class="mouse_hover" id="mouseHover"></span>
+				<div class="bigger_pic_box">
+					<img src="styles/images/flash_bigger.jpg" alt="" id="biggerPic" class="bigger_pic">
+				</div>
+			</div>
+			
+			
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<a href="#"><img src="styles/images/flash01.jpg"></a>
+			        </div>
+			        <div class="swiper-slide">
+			            <a href="#"><img src="styles/images/flash01.jpg"></a>
+			        </div>
+			        <div class="swiper-slide">
+			            <a href="#"><img src="styles/images/flash01.jpg"></a>
+			        </div>
+			        <div class="swiper-slide">
+			            <a href="#"><img src="styles/images/flash01.jpg"></a>
+			        </div>
+			    </div>
+			    
+			    <div class="swiper-pagination"></div>
+			</div>
+			
+		</div>
+		<div class="right_goods_infs">
+			<div class="goods_name">
+				<p>UR秋冬款魅力女装修身中长款V领连衣裙</p>
+				<div class="share_iecn gray">
+					分享
+				</div>
+			</div>
+			<div class="goods_id">
+				商品编号：
+				<span>WG15C29R7BN001</span>
+			</div>
+			<div class="want_order_box">
+				<div class="want_order2">心愿单（1987人气）</div>
+			</div>
+			<div class="goods_offers">
+				<!-- <span class="offers">全店满百元包邮</span>
+				<span class="offers">满999立减100元</span> -->
+			</div>
+			<div class="goods_price">
+				<span class="real_price">&yen;179</span>
+				<span class="market_price">
+					<span class="underline">&yen;269</span>
+				</span>
+			</div>
+			<div class="color_choose mobile_hide">
+				可选颜色：<span></span>
+			</div>
+			<div class="color_pic">
+				<ul>
+					<li class="active">
+						<img src="styles/images/blue.png">
+					</li>
+					<li>
+						<img src="styles/images/white.png">
+					</li>
+				</ul>
+			</div>
+			<div class="size_choose mobile_hide">
+				可选尺码：<span></span>
+			</div>
+			<div class="size_classes">
+				<a href="javascript:void(0)" class="code">S</a>
+				<a href="javascript:void(0)" class="code">M</a>
+				<a href="javascript:void(0)" class="code">L</a>
+				<a href="javascript:void(0)" class="code">S</a>
+				<a href="javascript:void(0)" class="code">M</a>
+				<a href="javascript:void(0)" class="code">L</a>
+				<a href="javascript:void(0)" class="code">S</a>
+				<a href="javascript:void(0)" class="code">M</a>
+				<a href="javascript:void(0)" class="code">L</a>
+				<a href="javascript:void(0)" class="code">S</a>
+				<a href="javascript:void(0)" class="code">M</a>
+				<a href="javascript:void(0)" class="code">L</a>
+				<a href="#" class="size_help gray">尺码指南</a>
+			</div>
+			<div class="num_box">
+				<div class="num">数量：</div>
+				<div class="num_text">
+					<span class="sub_btn"></span>
+					<input type="text" value="1" readonly="readonly" id="num_input" />
+					<span class="add_btn"></span>
+				</div>
+				<!-- <div class="offline_sale mobile_offline_sale">线下查询</div>
+				<div class="get_size">请先选择颜色尺码</div> -->
+				<div class="num_add_sub">
+					<ul>
+						<li class="add_num"></li>
+						<li class="sub_num"></li>
+					</ul>
+				</div>
+				<div class="under_line">
+					<div class="offline_sale pc_offline_sale">门店库存</div>
+					<div class="get_size">请先选择颜色尺码</div>
+				</div>
+			</div>
+			<div class="content_btn_box">
+				<button class="content_btn add_to_cart" id="add_to_cart1">加入购物袋</button>
+				<button class="content_btn add_to_want">我的收藏</button>
+			</div>
+			<div class="claer"></div>
+			<div class="delivery_time">
+				发货时间：
+				<span>2-7个工作日</span>
+				<span class="about_logistics">关于物流</span>
+			</div>
+			
+			<div class="tab_box">
+				<div class="tab">
+			    	<a class="on">描述</a>
+			        <a>成分</a>
+			        <a>洗涤养护</a> 
+			    </div>
+			    <div class="tab_content_box">
+			    	<div class="tab_content" id="tabContent">
+				    	<ul id="tabUl">
+				    		<li class="con_text on">
+				    			<div class="type_info_box">
+				    				<div class="type_info_item">
+				    					<span class="type_name">组合形式:</span>
+				    					<span class="type_value">单件</span>
+				    				</div>
+				    				<div class="type_info_item">
+				    					<span class="type_name">领型:</span>
+				    					<span class="type_value">圆领</span>
+				    				</div>
+				    				<div class="type_info_item">
+				    					<span class="type_name">颜色分类:</span>
+				    					<span class="type_value">深黑</span>
+				    				</div>
+				    				<div class="type_info_item">
+				    					<span class="type_name">裙长:</span>
+				    					<span class="type_value">中裙</span>
+				    				</div>
+				    			</div><div class="type_info_box">
+				    				<div class="type_info_item">
+				    					<span class="type_name">腰型:</span>
+				    					<span class="type_value">中腰</span>
+				    				</div>
+				    				<div class="type_info_item">
+				    					<span class="type_name">尺码:</span>
+				    					<span class="type_value">S</span>
+				    				</div>
+				    				<div class="type_info_item">
+				    					<span class="type_name">袖长:</span>
+				    					<span class="type_value">长袖</span>
+				    				</div>
+				    				<div class="type_info_item">
+				    					<span class="type_name">年份季节:</span>
+				    					<span class="type_value">2017年春夏</span>
+				    				</div>
+				    			</div>
+				    			<h3>综合描述</h3>
+				    			<p class="description">
+				    				以简约又舒适的设计著称，这款针织衫选用轻柔细腻的美丽奴羊毛混羊绒面料制作，别致的蝙蝠袖为柔和的奶白色主调增添个性魅力，是一款百搭实用的单品。
+				    			</p>
+				    		</li>
+				    		<li class="con_text">
+				    			<div class="type_info_box">
+				    				<div class="type_info_item">
+				    					<span class="type_name type_name_auto">面料:</span>
+				    					<span class="type_value">羊毛90% 羊绒10%</span>
+				    				</div>
+				    			</div><div class="type_info_box">
+				    				<div class="type_info_item">
+				    					<span class="type_name type_name_auto">里料:</span>
+				    					<span class="type_value">羊毛90% 羊绒10%</span>
+				    				</div>
+				    			</div>
+				    			<h3>毛边设计</h3>
+				    			<p class="description">
+				    				以简约又舒适的设计著称，这款针织衫选用轻柔细腻的美丽奴羊毛混羊绒面料制作，别致的蝙蝠袖为柔和的奶白色主调增添个性魅力，是一款百搭实用的单品。
+				    			</p>
+				    		</li>
+				    		<li class="con_text">
+				    			<h3>针织衫</h3>
+				    			<div class="tip_lists">
+				    				<i class="dec_tip dec_tip1" title="悬挂晾干在阴凉处"></i>
+				    				<i class="dec_tip dec_tip2" title="不可漂白"></i>
+				    			</div>
+				    			<p>
+				    				以简约又舒适的设计著称，这款针织衫选用轻柔细腻的美丽奴羊毛混羊绒面料制作，别致的蝙蝠袖为柔和的奶白色主调增添个性魅力...
+				    			</p>
+				    		</li>
+				    	</ul>
+				    </div>
+			    </div>
+			</div>
+			
+
+			
+			<div class="text_nav_list">
+		    	<ul>
+		    		<li class="con_text on">
+		    			<h2>描述</h2>
+		    			<div class="text_box">
+		    				<div class="type_info_box">
+			    				<div class="type_info_item">
+			    					<span class="type_name">组合形式:</span>
+			    					<span class="type_value">单件</span>
+			    				</div>
+			    				<div class="type_info_item">
+			    					<span class="type_name">领型:</span>
+			    					<span class="type_value">圆领</span>
+			    				</div>
+			    				<div class="type_info_item">
+			    					<span class="type_name">颜色分类:</span>
+			    					<span class="type_value">深黑</span>
+			    				</div>
+			    				<div class="type_info_item">
+			    					<span class="type_name">裙长:</span>
+			    					<span class="type_value">中裙</span>
+			    				</div>
+			    			</div><div class="type_info_box">
+			    				<div class="type_info_item">
+			    					<span class="type_name">腰型:</span>
+			    					<span class="type_value">中腰</span>
+			    				</div>
+			    				<div class="type_info_item">
+			    					<span class="type_name">尺码:</span>
+			    					<span class="type_value">S</span>
+			    				</div>
+			    				<div class="type_info_item">
+			    					<span class="type_name">袖长:</span>
+			    					<span class="type_value">长袖</span>
+			    				</div>
+			    				<div class="type_info_item">
+			    					<span class="type_name">年份季节:</span>
+			    					<span class="type_value">2017年春夏</span>
+			    				</div>
+			    			</div>
+			    			<h3>综合描述</h3>
+			    			<p class="description">
+			    				以简约又舒适的设计著称，这款针织衫选用轻柔细腻的美丽奴羊毛混羊绒面料制作，别致的蝙蝠袖为柔和的奶白色主调增添个性魅力，是一款百搭实用的单品。
+			    			</p>
+		    			</div>
+		    		</li>
+		    		<li class="con_text">
+		    			<h2>成分</h2>
+		    			<div class="text_box">
+		    				<div class="type_info_box">
+			    				<div class="type_info_item">
+			    					<span class="type_name type_name_mobile">面料:</span>
+			    					<span class="type_value type_value_mobile">羊毛90% 羊绒10%</span>
+			    				</div>
+			    			</div><div class="type_info_box type_info_auto">
+			    				<div class="type_info_item">
+			    					<span class="type_name type_name_mobile">里料:</span>
+			    					<span class="type_value type_value_mobile">羊毛90% 羊绒10%</span>
+			    				</div>
+			    			</div>
+			    			<h3>毛边设计</h3>
+			    			<p class="description">
+			    				以简约又舒适的设计著称，这款针织衫选用轻柔细腻的美丽奴羊毛混羊绒面料制作，别致的蝙蝠袖为柔和的奶白色主调增添个性魅力，是一款百搭实用的单品。
+			    			</p>
+		    			</div>
+		    			
+		    		</li>
+		    		<li class="con_text">
+		    			<h2>洗涤护养</h2>
+		    			<div class="text_box">
+		    				<h3>针织衫</h3>
+		    				<div class="tip_lists">
+			    				<i class="dec_tip dec_tip1" title="悬挂晾干在阴凉处"></i>
+			    				<i class="dec_tip dec_tip2" title="不可漂白"></i>
+			    			</div>
+			    			<p>
+			    				以简约又舒适的设计著称，这款针织衫选用轻柔细腻的美丽奴羊毛混羊绒面料制作，别致的蝙蝠袖为柔和的奶白色主调增添个性魅力...
+			    			</p>
+		    			</div>
+		    		</li>
+		    	</ul>
+			</div>
+			
+		</div>
+		<div class="clear"></div>
+		<!-- <div class="legend_box fr">
+			<h3>鼠标移动到图标上会有图标说明：</h3>
+			<ul class="legend">
+				<li><i class="dec_tip dec_tip1"></i>悬挂晾干在阴凉处</li>
+				<li><i class="dec_tip dec_tip2"></i>不可漂白</li>
+				<li><i class="dec_tip dec_tip3"></i>不可浸泡</li>
+				<li><i class="dec_tip dec_tip4"></i>不可干洗</li>
+				<li><i class="dec_tip dec_tip5"></i>在阴凉处平摊晾干</li>
+			</ul>
+		</div> -->
+	</div>
+	<div class="direction">
+		<span class="want_order gray">心愿单（1987人气）</span>
+		<span class="share_to gray">分享到</span>
+		<a class="share_to_blog"></a>
+		<a class="shear_to_wechat"></a>
+	</div>
+	<div class="clear"></div>
+	
+	<div class="combinate_buy">
+		<div class="tab_list">
+	    	<a class="on">搭配推荐</a>	   
+	    </div>
+	    <div class="com_content">
+	    	<ul>
+	    		<li class="com_infs on">
+	    			<div class="com_pic" id="com_pic1">
+	    				<div class="good_box">
+	    					<a href="javascript:void(0)"><img src="styles/images/com_buy1.png"></a>
+	    					<div class="choose_box">
+		    					<span class="choose_key"></span>
+		    					<span class="p_price">&yen;299</span>
+		    				</div>
+	    				</div>
+	    				
+	    			</div>
+	    			<div class="com_pic" id="com_pic1">
+	    				<div class="good_box">
+	    					<a href="javascript:void(0)"><img src="styles/images/com_buy2.png"></a>
+	    					<div class="choose_box">
+		    					<span class="choose_key"></span>
+		    					<span class="p_price">&yen;299</span>
+		    				</div>
+	    				</div>
+	    			</div>
+	    			<div class="com_pic" id="com_pic1">
+	    				<div class="good_box">
+	    					<a href="javascript:void(0)"><img src="styles/images/com_buy3.png"></a>
+	    					<div class="choose_box">
+		    					<span class="choose_key"></span>
+		    					<span class="p_price">&yen;299</span>
+		    				</div>
+	    				</div>
+	    			</div>
+	    			<div class="com_pic" id="com_pic1">
+	    				<div class="good_box">
+	    					<a href="javascript:void(0)"><img src="styles/images/com_buy4.png"></a>
+	    					<div class="choose_box">
+		    					<span class="choose_key"></span>
+		    					<span class="p_price">&yen;299</span>
+		    				</div>
+	    				</div>
+	    			</div>
+	    			<div class="com_pic last_one" id="com_pic1">
+	    				<div class="good_box">
+	    					<a href="javascript:void(0)"><img src="styles/images/com_buy5.png"></a>
+	    					<div class="choose_box">
+		    					<span class="choose_key"></span>
+		    					<span class="p_price">&yen;299</span>
+		    				</div>
+	    				</div>
+	    			</div>
+    				<div class="com_price" id="com_price1">
+	    				<!-- <p>
+			    			<span class="all_com_price">&yen;570</span>
+			    		</p> -->
+			    		<p>
+			    			<button class="content_btn btn1 add_to_cart" id="add_to_cart2">加入购物袋</button>
+			    		</p>
+    				</div>
+	    		</li>
+	    		<li class="com_infs">
+	    			<div class="com_pic" id="com_pic1">
+	    				<div><img src="styles/images/com_buy3.png"></div>
+	    				<p>
+	    					<span class="choose_key"></span>
+	    					<span class="p_price">&yen;299</span>
+	    				</p>
+	    			</div>
+	    			<div class="com_pic" id="com_pic1">
+	    				<div><img src="styles/images/com_buy2.png"></div>
+	    				<p>
+	    					<span class="choose_key"></span>
+	    					<span class="p_price">&yen;299</span>
+	    				</p>
+	    			</div>
+	    			<div class="com_pic last_one" id="com_pic1">
+	    				<div><img src="styles/images/com_buy1.png"></div>
+	    				<p>
+	    					<span class="choose_key"></span>
+	    					<span class="p_price">&yen;299</span>
+	    				</p>
+	    			</div>
+	    			<div class="com_price" id="com_price2">
+	    				<p>
+			    			<span>组合价</span>
+			    			<span class="all_com_price">&yen;370</span>
+			    		</p>
+			    		<p>
+			    			<button class="content_btn btn1 add_to_cart" id="add_to_cart2">加入购物袋</button>
+			    		</p>
+    				</div>
+	    		</li>
+	    	</ul>
+	    </div>
+	</div>
+	
+
+	
+	<div class="com_title">
+		<div class="fl">组合购买</div>
+		<div class="fr com_more">更多组合</div>
+	</div>
+	<div class="combinate_buy1" id="combinate_buy1">
+	    <div class="com_content1">
+	    	<ul>
+	    		<li class="com_infs1">
+	    			<div class="com_pic" id="com_pic3">
+	    				<div><img src="styles/images/com_buy1.png"></div>
+	    				<p>
+	    					<span class="choose_key"></span>
+	    					<span class="p_price">&yen;299</span>
+	    				</p>
+	    			</div>
+	    			<div class="com_pic" id="com_pic3">
+	    				<div><img src="styles/images/com_buy2.png"></div>
+	    				<p>
+	    					<span class="choose_key"></span>
+	    					<span class="p_price">&yen;299</span>
+	    				</p>
+	    			</div>
+	    			<div class="com_pic last_one" id="com_pic3">
+	    				<div><img src="styles/images/com_buy3.png"></div>
+	    				<p>
+	    					<span class="choose_key"></span>
+	    					<span class="p_price">&yen;299</span>
+	    				</p>
+	    			</div>
+	    		</li>
+	    	</ul>
+	    </div>
+	</div>
+	
+	
+	
+	<div class="product_review_infs">
+		<p class="review_title">商品评价</p>
+		<div class="review_list">
+			<div class="left_txt">
+				<ul>
+					<li class="favourite active"></li>
+					<li class="favourite active"></li>
+					<li class="favourite active"></li>
+					<li class="favourite"></li>
+					<li class="favourite"></li>
+				</ul>
+				<div>x***8（匿名）</div>
+				<div>2016/11/24</div>
+			</div><div class="center_txt">
+				<p>
+					以简约又舒适的设计著称，这款针织衫选用轻柔细腻的美丽奴羊毛混羊绒面料制作，别致的蝙蝠袖为柔和的奶白色主调增添个性魅力，是一款百搭实用的单品。
+				</p>
+				<ul class="img_lists">
+					<li class="img_item">
+						<img src="styles/images/women.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/youth.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/women.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/youth.png" alt="">
+					</li>
+				</ul>
+			</div><div class="right_txt">
+				<div>颜色：深蓝色</div>
+				<div>尺码：M</div>
+			</div>
+		</div>
+		<div class="review_list">
+			<div class="left_txt">
+				<ul>
+					<li class="favourite active"></li>
+					<li class="favourite active"></li>
+					<li class="favourite active"></li>
+					<li class="favourite"></li>
+					<li class="favourite"></li>
+				</ul>
+				<div>x***8（匿名）</div>
+				<div>2016/11/24</div>
+			</div><div class="center_txt">
+				<p>
+					以简约又舒适的设计著称，这款针织衫选用轻柔细腻的美丽奴羊毛混羊绒面料制作，别致的蝙蝠袖为柔和的奶白色主调增添个性魅力，是一款百搭实用的单品。
+				</p>
+				<ul class="img_lists">
+					<li class="img_item">
+						<img src="styles/images/women.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/youth.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/women.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/youth.png" alt="">
+					</li>
+				</ul>
+			</div><div class="right_txt">
+				<div>颜色：深蓝色</div>
+				<div>尺码：M</div>
+			</div>
+		</div>
+		<div class="review_list">
+			<div class="left_txt">
+				<ul>
+					<li class="favourite active"></li>
+					<li class="favourite active"></li>
+					<li class="favourite active"></li>
+					<li class="favourite"></li>
+					<li class="favourite"></li>
+				</ul>
+				<div>x***8（匿名）</div>
+				<div>2016/11/24</div>
+			</div><div class="center_txt">
+				<p>
+					以简约又舒适的设计著称，这款针织衫选用轻柔细腻的美丽奴羊毛混羊绒面料制作，别致的蝙蝠袖为柔和的奶白色主调增添个性魅力，是一款百搭实用的单品。
+				</p>
+				<ul class="img_lists">
+					<li class="img_item">
+						<img src="styles/images/women.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/youth.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/women.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/youth.png" alt="">
+					</li>
+				</ul>
+			</div><div class="right_txt">
+				<div>颜色：深蓝色</div>
+				<div>尺码：M</div>
+			</div>
+		</div>
+		<div class="review_list">
+			<div class="left_txt">
+				<ul>
+					<li class="favourite active"></li>
+					<li class="favourite active"></li>
+					<li class="favourite active"></li>
+					<li class="favourite"></li>
+					<li class="favourite"></li>
+				</ul>
+				<div>x***8（匿名）</div>
+				<div>2016/11/24</div>
+			</div><div class="center_txt">
+				<p>
+					以简约又舒适的设计著称，这款针织衫选用轻柔细腻的美丽奴羊毛混羊绒面料制作，别致的蝙蝠袖为柔和的奶白色主调增添个性魅力，是一款百搭实用的单品。
+				</p>
+				<ul class="img_lists">
+					<li class="img_item">
+						<img src="styles/images/women.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/youth.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/women.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/youth.png" alt="">
+					</li>
+				</ul>
+			</div><div class="right_txt">
+				<div>颜色：深蓝色</div>
+				<div>尺码：M</div>
+			</div>
+		</div>
+		<div class="review_list">
+			<div class="left_txt">
+				<ul>
+					<li class="favourite active"></li>
+					<li class="favourite active"></li>
+					<li class="favourite active"></li>
+					<li class="favourite"></li>
+					<li class="favourite"></li>
+				</ul>
+				<div>x***8（匿名）</div>
+				<div>2016/11/24</div>
+			</div><div class="center_txt">
+				<p>
+					以简约又舒适的设计著称，这款针织衫选用轻柔细腻的美丽奴羊毛混羊绒面料制作，别致的蝙蝠袖为柔和的奶白色主调增添个性魅力，是一款百搭实用的单品。
+				</p>
+				<ul class="img_lists">
+					<li class="img_item">
+						<img src="styles/images/women.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/youth.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/women.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/youth.png" alt="">
+					</li>
+				</ul>
+			</div><div class="right_txt">
+				<div>颜色：深蓝色</div>
+				<div>尺码：M</div>
+			</div>
+		</div>
+	</div>
+	<div class="pages_num">
+		<ul>
+			<li>
+				<a class="page_back on"></a>
+				<a class="on">1</a>
+				<a>2</a>
+				<a>3</a>
+				<a>4</a>
+				<a class="page5">5</a>
+				<a class="more_page">...</a>
+				<a class="page_go"></a>
+			</li>
+			<li>
+				<span>共18页,去第</span>
+				<span><input type="text" value="1" /></span>
+				<span>页</span>
+				<span><input type="button" value="确定"></span>
+			</li>
+		</ul>
+	</div>
+	
+
+	
+	<div class="product_review_infs1">
+		<p class="review_title">商品评价</p>
+		<div class="review_list">
+			<div class="right_txt">
+				<div>x***8（匿名）</div>
+				<div class="review_time">2016/11/24</div>
+				<ul>
+					<li class="favourite active"></li>
+					<li class="favourite active"></li>
+					<li class="favourite active"></li>
+					<li class="favourite"></li>
+					<li class="favourite"></li>
+				</ul>
+			</div>
+			<div class="left_txt">
+				<p>以简约又舒适的设计著称，这款针织衫选用轻柔细腻的美丽奴羊毛混羊绒面料制作，别致的蝙蝠袖为柔和的奶白色主调增添个性魅力，是一款百搭实用的单品。</p>
+			</div>
+			<div class="center_txt">
+				<div>
+					<span>颜色：深蓝色</span>
+					<span>尺码：M</span>
+				</div>
+				<ul class="img_lists">
+					<li class="img_item">
+						<img src="styles/images/women.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/youth.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/women.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/youth.png" alt="">
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="review_list">
+			<div class="right_txt">
+				<div>x***8（匿名）</div>
+				<div class="review_time">2016/11/24</div>
+				<ul>
+					<li class="favourite active"></li>
+					<li class="favourite active"></li>
+					<li class="favourite active"></li>
+					<li class="favourite"></li>
+					<li class="favourite"></li>
+				</ul>
+			</div>
+			<div class="left_txt">
+				<p>以简约又舒适的设计著称，这款针织衫选用轻柔细腻的美丽奴羊毛混羊绒面料制作，别致的蝙蝠袖为柔和的奶白色主调增添个性魅力，是一款百搭实用的单品。</p>
+			</div>
+			<div class="center_txt">
+				<div>
+					<span>颜色：深蓝色</span>
+					<span>尺码：M</span>
+				</div>
+				<ul class="img_lists">
+					<li class="img_item">
+						<img src="styles/images/women.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/youth.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/women.png" alt="">
+					</li>
+					<li class="img_item">
+						<img src="styles/images/youth.png" alt="">
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="review_all_btn">
+		<a href="goods_rated.html">查看全部评价</a>
+	</div>
+	
+</div>
+
+<div class="size_box_hover">
+	<div class="size_box">
+		<div class="size_title_box">
+			<h2>尺码指南</h2>
+			<span class="closed_size_box"></span>
+			<ul class="size_tab">
+				<li class="active" data-src="styles/images/size_man.jpg"><a href="javascript:void(0)">男装指引</a></li>
+				<li data-src="styles/images/size_woman.jpg"><a href="javascript:void(0)">女装指引</a></li>
+				<li data-src="styles/images/size_child.jpg"><a href="javascript:void(0)">童装指引</a></li>
+			</ul>
+		</div>
+		<div class="size_content_box">
+			<img src="styles/images/size_man.jpg" alt="">
+		</div>
+	</div>
+</div>
+
+
+
+<div class="mask" id="mask1"></div>
+<div class="com_buy_pup" id="com_buy_pup">
+	<span class="closed_mask_btn"></span>
+	<div class="com_buy_pup_infs">
+		<div class="com_pic" id="com_pic4">
+			<div><img src="styles/images/com_buy1.png"></div>
+			<!-- <span class="choose_key"></span> -->
+		</div>
+		<div class="com_pic" id="com_pic4">
+			<div><img src="styles/images/com_buy2.png"></div>
+			<!-- <span class="choose_key"></span> -->
+		</div>
+		<div class="com_pic" id="com_pic4">
+			<div><img src="styles/images/com_buy3.png"></div>
+			<!-- <span class="choose_key"></span> -->
+		</div>
+		<div class="com_pic" id="com_pic4">
+			<div><img src="styles/images/com_buy4.png"></div>
+			<!-- <span class="choose_key"></span> -->
+		</div>
+		<div class="com_pic last_one" id="com_pic4">
+			<div><img src="styles/images/com_buy5.png"></div>
+			<!-- <span class="choose_key"></span> -->
+		</div>
+		<div class="com_price" id="com_price4">
+			<span>组合价</span>
+			<span class="all_com_price">&yen;570</span>
+		</div>
+	</div>
+	<div class="please_choose">
+		<p>请选择组合内的商品信息</p>
+	</div>
+	<div class="com_goods_nav_outbox">
+		<div class="com_goods_nav">
+			<div class="com_goods_list">
+				<div class="radio_box mobile_show">
+					<span class="radio"></span>
+					<input type="text" class="radio_input">
+				</div><div class="com_goods_list_box">
+					<div class="com_pic_list">
+						<img src="styles/images/com_buy1.png">
+					</div>
+					<div class="com_infs_choose">
+						<h3 class="mobile_show">UR秋冬新款魅力女装修身中长款V领连衣裙</h3>
+						<div class="p_color">
+							<div class="color_choose">
+								颜色：<span class="mobile_hide">深蓝</span>
+							</div>
+							<div class="color_pic">
+								<ul>
+									<!-- <li class="mobile_show color_text">颜色：</li> -->
+									<li>
+										<span class="mobile_show">深蓝</span>
+										<img src="styles/images/blue.jpg" class="mobile_hide">
+									</li>
+									<li>
+										<span class="mobile_show">米白</span>
+										<img src="styles/images/white.jpg" class="mobile_hide">
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="p_size">
+							<div class="size_choose">
+								可选尺码：<span class="mobile_hide">S</span>
+							</div>
+							<div class="size_classes">
+								<!-- <span class="mobile_show">尺码：</span> -->
+								<a href="javascript:void(0)" class="code">S</a>
+								<a href="javascript:void(0)" class="code">M</a>
+								<a href="javascript:void(0)" class="code">L</a>
+								<a href="javascript:void(0)" class="code">S</a>
+								<a href="javascript:void(0)" class="code">M</a>
+								<a href="javascript:void(0)" class="code">L</a>
+								<a href="javascript:void(0)" class="code">S</a>
+								<a href="javascript:void(0)" class="code">M</a>
+								<a href="javascript:void(0)" class="code">L</a>
+								<a href="javascript:void(0)" class="code">S</a>
+								<a href="javascript:void(0)" class="code">M</a>
+								<a href="javascript:void(0)" class="code">L</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="com_goods_list">
+				<div class="radio_box mobile_show">
+					<span class="radio"></span>
+					<input type="text" class="radio_input">
+				</div><div class="com_goods_list_box">
+					<div class="com_pic_list">
+						<img src="styles/images/com_buy1.png">
+					</div>
+					<div class="com_infs_choose">
+						<h3 class="mobile_show">UR秋冬新款魅力女装修身中长款V领连衣裙</h3>
+						<div class="p_color">
+							<div class="color_choose">
+								颜色：<span class="mobile_hide">深蓝</span>
+							</div>
+							<div class="color_pic">
+								<ul>
+									<!-- <li class="mobile_show color_text">颜色：</li> -->
+									<li>
+										<span class="mobile_show">深蓝</span>
+										<img src="styles/images/blue.jpg" class="mobile_hide">
+									</li>
+									<li>
+										<span class="mobile_show">米白</span>
+										<img src="styles/images/white.jpg" class="mobile_hide">
+									</li>
+									<li>
+										<span class="mobile_show">米白</span>
+										<img src="styles/images/white.jpg" class="mobile_hide">
+									</li>
+									<li>
+										<span class="mobile_show">米白</span>
+										<img src="styles/images/white.jpg" class="mobile_hide">
+									</li>
+									<li>
+										<span class="mobile_show">米白</span>
+										<img src="styles/images/white.jpg" class="mobile_hide">
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="p_size">
+							<div class="size_choose">
+								尺码：<span class="mobile_hide">S</span>
+							</div>
+							<div class="size_classes">
+								<!-- <span class="mobile_show ">尺码：</span> -->
+								<a href="javascript:void(0)" class="code">S</a>
+								<a href="javascript:void(0)" class="code">M</a>
+								<a href="javascript:void(0)" class="code">L</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="com_goods_list">
+				<div class="radio_box mobile_show">
+					<span class="radio"></span>
+					<input type="text" class="radio_input">
+				</div><div class="com_goods_list_box">
+					<div class="com_pic_list">
+						<img src="styles/images/com_buy1.png">
+					</div>
+					<div class="com_infs_choose">
+						<h3 class="mobile_show">UR秋冬新款魅力女装修身中长款V领连衣裙</h3>
+						<div class="p_color">
+							<div class="color_choose">
+								颜色：<span class="mobile_hide">深蓝</span>
+							</div>
+							<div class="color_pic">
+								<ul>
+									<!-- <li class="mobile_show color_text">颜色：</li> -->
+									<li>
+										<span class="mobile_show">深蓝</span>
+										<img src="styles/images/blue.jpg" class="mobile_hide">
+									</li>
+									<li>
+										<span class="mobile_show">米白</span>
+										<img src="styles/images/white.jpg" class="mobile_hide">
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="p_size">
+							<div class="size_choose">
+								尺码：<span class="mobile_hide">S</span>
+							</div>
+							<div class="size_classes">
+								<!-- <span class="mobile_show">尺码：</span> -->
+								<a href="javascript:void(0)" class="code">S</a>
+								<a href="javascript:void(0)" class="code">M</a>
+								<a href="javascript:void(0)" class="code">L</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="com_goods_list">
+				<div class="radio_box mobile_show">
+					<span class="radio"></span>
+					<input type="text" class="radio_input">
+				</div><div class="com_goods_list_box">
+					<div class="com_pic_list">
+						<img src="styles/images/com_buy1.png">
+					</div>
+					<div class="com_infs_choose">
+						<h3 class="mobile_show">UR秋冬新款魅力女装修身中长款V领连衣裙</h3>
+						<div class="p_color">
+							<div class="color_choose">
+								颜色：<span class="mobile_hide">深蓝</span>
+							</div>
+							<div class="color_pic">
+								<ul>
+									<!-- <li class="mobile_show color_text">颜色：</li> -->
+									<li>
+										<span class="mobile_show">深蓝</span>
+										<img src="styles/images/blue.jpg" class="mobile_hide">
+									</li>
+									<li>
+										<span class="mobile_show">米白</span>
+										<img src="styles/images/white.jpg" class="mobile_hide">
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="p_size">
+							<div class="size_choose">
+								尺码：<span class="mobile_hide">S</span>
+							</div>
+							<div class="size_classes">
+								<!-- <span class="mobile_show">尺码：</span> -->
+								<a href="javascript:void(0)" class="code">S</a>
+								<a href="javascript:void(0)" class="code">M</a>
+								<a href="javascript:void(0)" class="code">L</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="com_goods_list">
+				<div class="radio_box mobile_show">
+					<span class="radio"></span>
+					<input type="text" class="radio_input">
+				</div><div class="com_goods_list_box">
+					<div class="com_pic_list">
+						<img src="styles/images/com_buy1.png">
+					</div>
+					<div class="com_infs_choose">
+						<h3 class="mobile_show">UR秋冬新款魅力女装修身中长款V领连衣裙</h3>
+						<div class="p_color">
+							<div class="color_choose">
+								颜色：<span class="mobile_hide">深蓝</span>
+							</div>
+							<div class="color_pic">
+								<ul>
+									<!-- <li class="mobile_show color_text">颜色：</li> -->
+									<li>
+										<span class="mobile_show">深蓝</span>
+										<img src="styles/images/blue.jpg" class="mobile_hide">
+									</li>
+									<li>
+										<span class="mobile_show">米白</span>
+										<img src="styles/images/white.jpg" class="mobile_hide">
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="p_size">
+							<div class="size_choose">
+								尺码：<span class="mobile_hide">S</span>
+							</div>
+							<div class="size_classes">
+								<!-- <span class="mobile_show">尺码：</span> -->
+								<a href="javascript:void(0)" class="code">S</a>
+								<a href="javascript:void(0)" class="code">M</a>
+								<a href="javascript:void(0)" class="code">L</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="final_infs">
+		<div class="ofh count_box">
+			<span class="mobile_hide">
+				数量：<input type="text" readonly="readonly" id="countInput" value="1" />
+				<div class="handle_count">
+					<a href="javascript:void(0)" class="add_count"></a>
+					<a href="javascript:void(0)" class="sub_count"></a>
+				</div>
+			</span>
+			<span class="set mobile_hide">套</span>
+		</div>
+		<div class="sum_price_box">
+			<span>合计</span>
+			<span>&yen;670</span>
+		</div>
+		<div class="content_btn_box"><button class="content_btn btn1 add_to_cart" id="add_to_cart4">加入购物袋</button></div>
+		<button class="content_btn add_to_want mobile_show">加入心愿望清单</button>
+	</div>
+</div>
+
+
+<div class="on_shop_check">
+	<div class="delect_btn"></div>
+	<div class="on_shop_content">
+		<div class="on_shop_title">在店铺查找商品</div>
+		<div class="relative">
+			<div class="top_box">
+				<div class="shop_p_name">UR秋冬款魅力女装修身中长款V领连衣裙</div>
+				<div class="get_p_color">
+					<span class="select_color_label">颜色：</span>
+			        <div class="select_color_box">
+			            <span class="select_color_txt">深蓝色</span>
+			            <div class="option" id="color_option">
+			                <a>米白色</a>
+			                <a>红色</a>
+			                <a>绿色</a>
+			                <a>粉红色</a>
+			            </div>
+			        </div>
+			        <input type="hidden" id="select_color_value" />
+				</div>
+			</div>
+			<div class="center_box">
+				<div class="shop_p_id">商品编号：<span>WG15C29R7BN001</span></div>
+				<div class="get_p_size">
+					<span class="select_size_label">尺码：</span>
+			        <div class="select_size_box">
+			            <span class="select_size_txt">S</span>
+			            <div class="option" id="size_option">
+			                <a>M</a>
+			                <a>L</a>
+			                <a>XL</a>
+			                <a>XXL</a>
+			            </div>
+			        </div>
+			        <input type="hidden" id="select_size_value" />
+				</div>
+			</div>
+		</div>
+		<div class="stock_box">
+			<div class="stock_change">库存量可能会改变</div>
+			<div class="stock_last_renew">库存量最后更新：25NOV20164:10PM</div>
+		</div>
+		<div class="select_area_shop">
+			选择地区店铺
+			<div class="shop_address_box">
+				<span>广东省</span>
+				<div class="list_out_box">
+					<ul>
+						<li><a href="javascript:void(0)">XXX</a></li>
+						<li><a href="javascript:void(0)">XX</a></li>
+						<li><a href="javascript:void(0)">X</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="shop_address_box">
+				<span>广州市</span>
+				<div class="list_out_box">
+					<ul>
+						<li><a href="javascript:void(0)">XXX</a></li>
+						<li><a href="javascript:void(0)">XX</a></li>
+						<li><a href="javascript:void(0)">X</a></li>
+						<li><a href="javascript:void(0)">XXX</a></li>
+						<li><a href="javascript:void(0)">XX</a></li>
+						<li><a href="javascript:void(0)">X</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="shop_address_box">
+				<span>越秀区</span>
+				<div class="list_out_box">
+					<ul>
+						<li><a href="javascript:void(0)">XXX</a></li>
+						<li><a href="javascript:void(0)">XX</a></li>
+						<li><a href="javascript:void(0)">X</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="address_list">
+			<div class="address_box">
+				<div class="left_list">
+					<div class="shop_name">
+						<span class="store_name">五月花店</span>
+					</div>
+					<div class="distance">
+						<div class="drs_txt">地址：</div>
+						<div class="drs_box">
+							广东省广州市越秀区中山5路188号五月花商城1F地铺1023A
+							<span class="distance_tip">1.5km</span>
+						</div>
+					</div>
+				</div>
+				<div class="right_list">少量库存</div>
+			</div>
+			<div class="address_box">
+				<div class="left_list">
+					<div class="shop_name">
+						<span class="store_name">五月花店</span>
+					</div>
+					<div class="distance">
+						<div class="drs_txt">地址：</div>
+						<div class="drs_box">
+							广东省广州市越秀区中山5路188号五月花商城1F地铺1023A
+							<span class="distance_tip">1.5km</span>
+						</div>
+					</div>
+				</div>
+				<div class="right_list">少量库存</div>
+			</div>
+			<div class="address_box">
+				<div class="left_list">
+					<div class="shop_name">
+						<span class="store_name">五月花店</span>
+					</div>
+					<div class="distance">
+						<div class="drs_txt">地址：</div>
+						<div class="drs_box">
+							广东省广州市越秀区中山5路188号五月花商城1F地铺1023A
+							<span class="distance_tip">1.5km</span>
+						</div>
+					</div>
+				</div>
+				<div class="right_list">少量库存</div>
+			</div>
+			<div class="address_box">
+				<div class="left_list">
+					<div class="shop_name">
+						<span class="store_name">五月花店</span>
+					</div>
+					<div class="distance">
+						<div class="drs_txt">地址：</div>
+						<div class="drs_box">
+							广东省广州市越秀区中山5路188号五月花商城1F地铺1023A
+							<span class="distance_tip">1.5km</span>
+						</div>
+					</div>
+				</div>
+				<div class="right_list">少量库存</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+<div class="pup_mobile">
+	<div class="del_btn"></div>
+	<div class="blog_box">
+		<div class="blog_icon"></div>
+		<p>新浪微博</p>
+	</div>
+	<div class="wechat_box">
+		<div class="wechat_icon"></div>
+		<p>微信好友</p>
+	</div>
+	<div class="friend_circle_box">
+		<div class="friends_icon"></div>
+		<p>朋友圈</p>
+	</div>
+</div>
+<script type="text/javascript" src="js/goods_details.js"></script>
+<script src="js/swiper.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var mySwiper = new Swiper('.swiper-container',{
+	        autoplay: 3000,   //自动轮播参数
+	        //再次触发自动轮播，必须设置为false才可在手动滑动之后，再次触发自动轮播，默认为Ture
+	        autoplayDisableOnInteraction : false, 
+	        pagination: '.swiper-pagination',   //分页器class
+	        loop: true,   //无限循环
+	        grabCursor: true,    //鼠标放上时变成手的形状
+	    });
+	    
+	    $('#tabContent').perfectScrollbar(null, {myHeight:32});
+
+	    $('.com_goods_nav').delegate('.radio_box', 'click', function() {
+	    	$(this).toggleClass('active');
+	    });
+	})
+</script>
+<div class="footer">
+
+			<div class="share_box">
+				<h2>分享</h2>
+				<div class="share_type">
+					<span class="micro_blog share_icon" id="microBlog"></span>
+					<span class="wechat share_icon" id="wechat"></span>
+					<span class="qr_code">
+						<img src="styles/images/qr_code.png" alt="">
+						<p>微信扫一扫 分享给</p>
+						<p>微信好友或 微信好友圈</p>
+						<i class="closed_btn" id="closedBtn">x</i>
+					</span>
+				</div>
+			</div>
+			<div class="email_box">
+				<div class="email_input_box">
+					<input type="text" class="email_input" placeholder="输入邮箱 立即订阅UR最新流行趋势">
+					<a href="javascript" class="email_btn">订阅</a>
+				</div>
+				<!-- <div class="email_btn">订阅UR电子邮件</div> -->
+				<!-- <div class="country_select_box fl">
+					<p class="select_tip">选择国家</p>
+					<div class="country_select" id="countrySelect">
+						<span>中国</span>
+						<div class="country_list_box" id="countryListBox">
+							<div id="countryList" class="country_list">
+					        	<div class="content">
+					        		<ul>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        			<li><a href="javascript:;">123</a></li>
+					        		</ul>
+					        	</div>
+					        </div>
+						</div>
+					</div>	
+				</div>
+				<div class="language_select_box fr">
+					<p class="select_tip">选择语言</p>
+					<div class="language_select" id="languageSelect">
+						<span>中文</span>
+						<div class="language_list_box" id="languageListBox">
+							<div id="languageList" class="language_list">
+					        	<div class="content">
+					        		<ul>
+					        			<li><a href="#">ENGLISH</a></li>
+				        			<li><a href="#">中文</a></li>
+					        		</ul>
+					        	</div>
+					        </div>
+						</div>
+					</div>
+				</div> -->
+			</div>
+			<div class="clear"></div>
+			<div class="footer_nav">
+				<!-- <ul class="footer_nav_item">
+					<li class="title"><a>新手上路</a></li>
+					<li>
+						<ul class="sub_list">
+							<li><a href="#">会员制度</a></li>
+							<li><a href="#">发票制度</a></li>
+							<li><a href="#">常见问题</a></li>
+							<li><a href="#">在线客服</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="footer_nav_item">
+					<li class="title"><a>支付方式</a></li>
+					<li>
+						<ul class="sub_list">
+							<li><a href="#">支付宝支付</a></li>
+							<li><a href="#">微信支付</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="footer_nav_item">
+					<li class="title"><a>物流配送</a></li>
+					<li>
+						<ul class="sub_list">
+							<li><a href="#">配送方式</a></li>
+							<li><a href="#">门店自提</a></li>
+							<li><a href="#">配送范围及时间</a></li>
+							<li><a href="#">配送状态查询</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="footer_nav_item">
+					<li class="title"><a>售后服务</a></li>
+					<li>
+						<ul class="sub_list">
+							<li><a href="#">咨询与投诉</a></li>
+							<li><a href="#">退换货申请</a></li>
+							<li><a href="#">退换货政策</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="footer_nav_item">
+					<li class="title"><a>购物指南</a></li>
+					<li>
+						<ul class="sub_list">
+							<li><a href="#">注册登录</a></li>
+							<li><a href="#">密码相关</a></li>
+							<li><a href="#">购物流程</a></li>
+							<li><a href="#">服务条款</a></li>
+						</ul>
+					</li>
+				</ul> -->
+				<ul class="new_footer_nav_item">
+					<li><a href="javascript:void(0)">App</a></li><li><a href="javascript:void(0)">购买指南</a></li><li><a href="javascript:void(0)">常见问题</a></li><li><a href="javascript:void(0)">支付</a></li><li><a href="javascript:void(0)">配送</a></li><li><a href="javascript:void(0)">退货</a></li><li><a href="javascript:void(0)">我的账号</a></li>
+				</ul>
+			</div>
+			<div class="bottom_box">
+				<span class="long_text">加盟 | 职业机会 |</span> ©2016 URBAN REVIVO ALL RIGHTS RESERVED | 粤ICP备13081728号 | TERMS AND CONDITIONS
+			</div>
+		</div>
+	</div>
+	<script src="js/scrollbar-with-mousewheel.min.js"></script>
+	<script src="js/perfect-scrollbar2.js"></script>
+	<script src="js/footer.js"></script>
+	<script src="js/confirm.js"></script>
+	<script>
+		// URConfirm.confirm函数有多个参数依次为 fn, args, msg, okText, cancelText, isGold
+		// 分别为点击确定按钮后的回调函数， 传递给回调函数的参数， 弹框中的信息，确定按钮的文本，取消按钮的文本, 第二个按钮是否使用金色背景
+		// URConfirm.confirm(
+		// 	function(){
+		// 		console.log('you click ok');
+		// 	}, null, '<h2>标题</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat debitis nemo rerum quos illo non inventore iure saepe expedita molestiae dolorem, numquam blanditiis placeat possimus totam quidem nihil reiciendis. Libero!</p>', null, null, true
+		// );
+	</script></body>
